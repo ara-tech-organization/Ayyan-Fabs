@@ -125,11 +125,14 @@ export default function Footer() {
 
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">
-          <p className="footer__copy">
+          <p className="footer__copy footer__copy--white">
             &copy; {new Date().getFullYear()} Sri Ayyan Fabs. All rights reserved.
           </p>
-          <p className="footer__copy footer__gstin">
-            GSTIN: 29AIYPR5034K1ZC
+          <p className="footer__copy footer__crafted">
+            ❤️ Crafted with Excellence by{' '}
+            <a href="https://discovertechnologies.co/" target="_blank" rel="noopener noreferrer" className="footer__crafted-link">
+              Ara Discoveries Pvt. Ltd
+            </a>
           </p>
         </div>
       </div>

@@ -1,19 +1,10 @@
+import { Link } from 'react-router-dom'
 import { Phone, Mail, MapPin, Clock, FileText, ArrowUpRight, ChevronRight } from 'lucide-react'
 import logo from '../assets/Logo.jpg'
 
 const contactItems = [
-  {
-    icon: Phone,
-    label: 'Call / WhatsApp',
-    value: '+91 89040 38295',
-    href: 'tel:+918904038295',
-  },
-  {
-    icon: Mail,
-    label: 'Email',
-    value: 'sriayyanfabs@gmail.com',
-    href: 'mailto:sriayyanfabs@gmail.com',
-  },
+  { icon: Phone, label: 'Call / WhatsApp', value: '+91 89040 38295', href: 'tel:+918904038295' },
+  { icon: Mail, label: 'Email', value: 'sriayyanfabs@gmail.com', href: 'mailto:sriayyanfabs@gmail.com' },
   {
     icon: MapPin,
     label: 'Workshop Address',
@@ -21,35 +12,17 @@ const contactItems = [
     href: 'https://maps.google.com/?q=Dasarahalli+Bangalore+560092',
     external: true,
   },
-  {
-    icon: Clock,
-    label: 'Business Hours',
-    value: 'Monday – Saturday: 9:00 AM – 6:30 PM',
-    href: null,
-  },
-  {
-    icon: FileText,
-    label: 'GSTIN',
-    value: '29AIYPR5034K1ZC',
-    href: null,
-  },
+  { icon: Clock, label: 'Business Hours', value: 'Monday – Saturday: 9:00 AM – 6:30 PM', href: null },
+  { icon: FileText, label: 'GSTIN', value: '29AIYPR5034K1ZC', href: null },
 ]
 
-const quickLinks = [
-  { label: 'Aluminium Windows & Doors', href: '#services' },
-  { label: 'MS Steel Structures', href: '#services' },
-  { label: 'Glass Partitions', href: '#services' },
-  { label: 'UPVC Systems', href: '#services' },
-  { label: 'Cladding & Facades', href: '#services' },
-  { label: 'Handrails & Balustrades', href: '#services' },
-]
-
-const companyLinks = [
-  { label: 'About Us', href: '#' },
-  { label: 'Our Process', href: '#process' },
-  { label: 'Projects', href: '/projects-s1.html' },
-  { label: 'Get a Quote', href: '#quote-form' },
-  { label: 'Contact', href: '#contact' },
+const serviceLinks = [
+  { label: 'Aluminium Fabrication', slug: 'aluminium-fabrication' },
+  { label: 'ACP Cladding Works', slug: 'acp-cladding' },
+  { label: 'Patch Fitting & Frameless Glass', slug: 'patch-fitting-glass' },
+  { label: 'Custom Metal Gates', slug: 'custom-metal-gates' },
+  { label: 'Industrial Roofing', slug: 'industrial-roofing' },
+  { label: 'MS Steel Fabrication', slug: 'ms-steel-fabrication' },
 ]
 
 export default function Footer() {
@@ -59,13 +32,13 @@ export default function Footer() {
         <div className="container footer__grid">
 
           <div className="footer__brand-col">
-            <a href="#" className="footer__logo">
+            <Link to="/" className="footer__logo">
               <img src={logo} alt="Sri Ayyan Fabs" />
               <div>
                 <span className="footer__logo-name">Sri Ayyan Fabs</span>
                 <span className="footer__logo-tag">Precision Fabrication</span>
               </div>
-            </a>
+            </Link>
             <p className="footer__brand-desc">
               Bangalore's most trusted aluminium and structural steel fabrication experts.
               Engineering precision on every project — no shortcuts, no compromises.
@@ -119,12 +92,12 @@ export default function Footer() {
           <div className="footer__links-col">
             <h3 className="footer__col-title">Our Services</h3>
             <ul className="footer__links-list">
-              {quickLinks.map((link, i) => (
+              {serviceLinks.map((link, i) => (
                 <li key={i}>
-                  <a href={link.href} className="footer__nav-link">
+                  <Link to={`/services/${link.slug}`} className="footer__nav-link">
                     <ChevronRight size={14} />
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -133,14 +106,18 @@ export default function Footer() {
           <div className="footer__links-col">
             <h3 className="footer__col-title">Company</h3>
             <ul className="footer__links-list">
-              {companyLinks.map((link, i) => (
-                <li key={i}>
-                  <a href={link.href} className="footer__nav-link">
-                    <ChevronRight size={14} />
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <Link to="/" className="footer__nav-link"><ChevronRight size={14} />Home</Link>
+              </li>
+              <li>
+                <Link to="/about" className="footer__nav-link"><ChevronRight size={14} />About Us</Link>
+              </li>
+              <li>
+                <Link to="/services" className="footer__nav-link"><ChevronRight size={14} />All Services</Link>
+              </li>
+              <li>
+                <a href="#quote-form" className="footer__nav-link"><ChevronRight size={14} />Get a Quote</a>
+              </li>
             </ul>
             <a href="#quote-form" className="footer__cta">
               Request Free Quote

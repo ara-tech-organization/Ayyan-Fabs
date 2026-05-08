@@ -1,13 +1,7 @@
 import { useState, useEffect } from 'react'
+import { NavLink, Link } from 'react-router-dom'
 import { Menu, X, Phone } from 'lucide-react'
 import logo from '../assets/Logo.jpg'
-
-const navLinks = [
-  { label: 'Services', href: '#services' },
-  { label: 'Process', href: '#process' },
-  { label: 'Projects', href: '/projects-s1.html' },
-  { label: 'Contact', href: '#contact' },
-]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -24,23 +18,30 @@ export default function Navbar() {
   return (
     <header className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
       <div className="container navbar__inner">
-        <a href="#" className="navbar__logo" onClick={closeMenu}>
+        <Link to="/" className="navbar__logo" onClick={closeMenu}>
           <img src={logo} alt="Sri Ayyan Fabs logo" className="navbar__logo-img" />
           <div className="navbar__brand">
             <span className="navbar__brand-name">Sri Ayyan Fabs</span>
             <span className="navbar__brand-tagline">Precision Fabrication</span>
           </div>
-        </a>
+        </Link>
 
         <nav className={`navbar__links${menuOpen ? ' navbar__links--open' : ''}`} aria-label="Main navigation">
-          {navLinks.map(link => (
-            <a key={link.href} href={link.href} className="navbar__link" onClick={closeMenu}>
-              {link.label}
-            </a>
-          ))}
-          <a href="#quote-form" className="btn-primary navbar__cta-mobile" onClick={closeMenu}>
-            Free Quote
+          <NavLink to="/" end className={({ isActive }) => `navbar__link${isActive ? ' navbar__link--active' : ''}`} onClick={closeMenu}>
+            Home
+          </NavLink>
+          <NavLink to="/services" className={({ isActive }) => `navbar__link${isActive ? ' navbar__link--active' : ''}`} onClick={closeMenu}>
+            Services
+          </NavLink>
+          <NavLink to="/about" className={({ isActive }) => `navbar__link${isActive ? ' navbar__link--active' : ''}`} onClick={closeMenu}>
+            About
+          </NavLink>
+          <a href="#quote-form" className="navbar__link" onClick={closeMenu}>
+            Contact
           </a>
+          <Link to="/#quote-form" className="btn-primary navbar__cta-mobile" onClick={closeMenu}>
+            Free Quote
+          </Link>
         </nav>
 
         <div className="navbar__actions">
@@ -48,9 +49,9 @@ export default function Navbar() {
             <Phone size={15} strokeWidth={2.5} />
             <span>+91 89040 38295</span>
           </a>
-          <a href="#quote-form" className="btn-primary navbar__cta">
+          <Link to="/#quote-form" className="btn-primary navbar__cta">
             Free Quote
-          </a>
+          </Link>
         </div>
 
         <button

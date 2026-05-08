@@ -1,52 +1,8 @@
 import { useEffect, useRef } from 'react'
-import {
-  Frame, Building2, Grid3x3, Wrench,
-  ShieldCheck, DoorOpen, Layers, Fence,
-  ArrowRight
-} from 'lucide-react'
-
-const services = [
-  {
-    icon: Frame,
-    title: 'Aluminium Windows & Doors',
-    desc: 'Precision-engineered aluminium frame systems with powder coat finish, thermal break profiles, and multi-point locking.',
-  },
-  {
-    icon: Building2,
-    title: 'MS Steel Structures',
-    desc: 'Heavy-duty mild steel structural frameworks, mezzanine floors, and industrial-grade steel fabrication.',
-  },
-  {
-    icon: Grid3x3,
-    title: 'Glass Partition Systems',
-    desc: 'Full-height and modular glass partitions using tempered/laminated glass with aluminium or stainless steel framing.',
-  },
-  {
-    icon: Wrench,
-    title: 'Stainless Steel Works',
-    desc: 'Mirror and matte-finish SS fabrication for railings, counters, kitchen systems, and architectural elements.',
-  },
-  {
-    icon: ShieldCheck,
-    title: 'UPVC Window Systems',
-    desc: 'Multi-chamber UPVC profiles with thermal insulation, UV resistance, and noise reduction for residential projects.',
-  },
-  {
-    icon: DoorOpen,
-    title: 'MS Grills & Gates',
-    desc: 'Custom-designed mild steel grills, compound gates, and security shutters with anti-corrosion primer finish.',
-  },
-  {
-    icon: Layers,
-    title: 'Cladding & Wall Panels',
-    desc: 'ACP, HPL, and aluminium composite cladding systems for commercial facades and interior feature walls.',
-  },
-  {
-    icon: Fence,
-    title: 'Handrails & Balustrades',
-    desc: 'Engineered stainless steel, aluminium, and MS handrail systems for staircases, balconies, and ramps.',
-  },
-]
+import { Link } from 'react-router-dom'
+import { ArrowRight } from 'lucide-react'
+import { services } from '../data/servicesData'
+import ServiceCard from './ServiceCard'
 
 export default function ServicesSection() {
   const sectionRef = useRef(null)
@@ -83,25 +39,16 @@ export default function ServicesSection() {
         </div>
 
         <div className="services-grid">
-          {services.map((svc, i) => {
-            const Icon = svc.icon
-            return (
-              <article
-                key={i}
-                className={`service-card reveal-scale delay-${(i % 4) + 1}`}
-              >
-                <div className="service-card__icon">
-                  <Icon size={26} strokeWidth={1.8} />
-                </div>
-                <h3 className="service-card__title">{svc.title}</h3>
-                <p className="service-card__desc">{svc.desc}</p>
-                <a href="#quote-form" className="service-card__cta" aria-label={`Get quote for ${svc.title}`}>
-                  <span>Get Quote</span>
-                  <ArrowRight size={14} />
-                </a>
-              </article>
-            )
-          })}
+          {services.map((svc, i) => (
+            <ServiceCard key={svc.slug} service={svc} index={i} />
+          ))}
+        </div>
+
+        <div className="services-footer reveal">
+          <Link to="/services" className="btn-outline services-footer__btn">
+            View All Services
+            <ArrowRight size={16} />
+          </Link>
         </div>
       </div>
     </section>

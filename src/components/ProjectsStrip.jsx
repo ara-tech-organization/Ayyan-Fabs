@@ -40,7 +40,7 @@ export default function ProjectsStrip() {
           <div className="proj-strip__header-left">
             <span className="section-label">Our Work</span>
             <h2 className="section-heading">Projects We're Proud Of</h2>
-            <p className="section-sub" style={{ whiteSpace: 'nowrap' }}>Fabrication delivered across Bangalore — on time, on spec, and built to last.</p>
+            <p className="section-sub proj-strip__sub">Fabrication delivered across Bangalore — on time, on spec, and built to last.</p>
           </div>
         </div>
         <div className="proj-strip__grid" ref={ref}>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { ChevronRight } from 'lucide-react'
 import { services } from '../data/servicesData'
 import ServiceCard from '../components/ServiceCard'
+import heroBg from '../assets/h3.png'
 
 export default function ServicesIndexPage() {
   const gridRef = useRef(null)
@@ -27,7 +28,7 @@ export default function ServicesIndexPage() {
 
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero" style={{ backgroundImage: `url(${heroBg})` }}>
         <div className="container">
           <nav className="page-hero__breadcrumb" aria-label="Breadcrumb">
             <Link to="/">Home</Link>

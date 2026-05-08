@@ -1,6 +1,7 @@
 export const services = [
   {
     slug: 'aluminium-fabrication',
+    image: 'images/svc-aluminium.jpg',
     icon: 'Frame',
     title: 'Aluminium Fabrication',
     cardDesc: 'From sliding windows to curtain walls — we engineer aluminium systems that deliver thermal efficiency, structural strength, and a finish that holds for decades.',
@@ -23,6 +24,7 @@ export const services = [
   },
   {
     slug: 'acp-cladding',
+    image: 'images/svc-acp.jpg',
     icon: 'Layers',
     title: 'ACP Cladding Works',
     cardDesc: 'Transform the face of any building. Our ACP cladding solutions deliver weather-resistant, fire-rated, visually striking exteriors that redefine architectural identity.',
@@ -44,6 +46,7 @@ export const services = [
   },
   {
     slug: 'patch-fitting-glass',
+    image: 'images/svc-glass.jpg',
     icon: 'Grid3x3',
     title: 'Patch Fitting & Frameless Glass',
     cardDesc: 'Frameless glass doors, partitions, and facades. Precision-engineered patch fitting systems that create open, premium, modern spaces without compromising on strength.',
@@ -64,6 +67,7 @@ export const services = [
   },
   {
     slug: 'custom-metal-gates',
+    image: 'images/svc-gate.jpg',
     icon: 'DoorOpen',
     title: 'Custom Metal Gates',
     cardDesc: 'Security that doesn\'t sacrifice style. We fabricate heavy-duty MS and stainless steel gates — sliding, swing, cantilever, and motorised — built for Bangalore\'s residential and industrial demands.',
@@ -85,6 +89,7 @@ export const services = [
   },
   {
     slug: 'industrial-roofing',
+    image: 'images/svc-roofing.jpg',
     icon: 'Building2',
     title: 'Industrial & Commercial Roofing',
     cardDesc: 'Long-span, weatherproof, thermally efficient roofing systems. We design and install MS and aluminium roofing structures for warehouses, factories, sheds, and commercial buildings.',
@@ -106,6 +111,7 @@ export const services = [
   },
   {
     slug: 'site-barricading',
+    image: 'images/svc-barricade.jpg',
     icon: 'ShieldCheck',
     title: 'Site Barricading',
     cardDesc: 'Compliant, robust, and branded site barricading for construction and infrastructure projects. We deliver safety barriers that protect the public and project your brand professionally.',
@@ -126,6 +132,7 @@ export const services = [
   },
   {
     slug: 'ms-steel-fabrication',
+    image: 'images/svc-grill.jpg',
     icon: 'Wrench',
     title: 'MS Steel Fabrication',
     cardDesc: 'Structural steel that\'s built to carry loads, not just meet specifications. We fabricate MS steel structures, mezzanines, staircases, railings, and industrial components to exact engineering drawings.',
@@ -149,6 +156,7 @@ export const services = [
   },
   {
     slug: 'custom-works',
+    image: 'images/svc-ms.jpg',
     icon: 'Fence',
     title: 'Custom & Miscellaneous Works',
     cardDesc: 'Have a fabrication challenge that doesn\'t fit a standard service? We solve it. From grilles and louvres to custom brackets and bespoke architectural metalwork — we fabricate it.',

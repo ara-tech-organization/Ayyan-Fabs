@@ -119,10 +119,6 @@ export default function Footer() {
                 <a href="#quote-form" className="footer__nav-link"><ChevronRight size={14} />Get a Quote</a>
               </li>
             </ul>
-            <a href="#quote-form" className="footer__cta">
-              Request Free Quote
-              <ArrowUpRight size={15} />
-            </a>
           </div>
         </div>
       </div>

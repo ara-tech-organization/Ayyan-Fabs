@@ -6,6 +6,10 @@ import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import ServicesIndexPage from './pages/ServicesIndexPage'
 import ServicePage from './pages/ServicePage'
+import ProjectsPage from './pages/ProjectsPage'
+import IndustriesPage from './pages/IndustriesPage'
+import TestimonialsPage from './pages/TestimonialsPage'
+import ContactPage from './pages/ContactPage'
 
 export default function App() {
   return (
@@ -17,6 +21,10 @@ export default function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicesIndexPage />} />
           <Route path="/services/:slug" element={<ServicePage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/industries" element={<IndustriesPage />} />
+          <Route path="/testimonials" element={<TestimonialsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </main>
       <Footer />

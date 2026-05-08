@@ -1,25 +1,17 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import heroBg from '../assets/h2.png'
+import { img } from '../utils/imgPath'
 import {
-  ChevronRight, Target, ShieldCheck, Clock, Users, Lightbulb, Leaf,
-  Ruler, Factory, BadgeCheck, MapPin, Headphones, Layers,
-  ChevronDown, Phone
+  ChevronRight,
+  Wrench, Handshake, Lightbulb, ClipboardCheck, Award,
+  Factory, Ruler, Zap, FileText, BadgeCheck, Receipt,
 } from 'lucide-react'
-import { values, differentiators, industries, testimonials, faqs } from '../data/aboutData'
+import { companyStory, mission, vision, values, differentiators } from '../data/aboutData'
 
-const iconMap = { Target, ShieldCheck, Clock, Users, Lightbulb, Leaf, Ruler, Factory, BadgeCheck, MapPin, Headphones, Layers }
-
-function FAQItem({ item }) {
-  const [open, setOpen] = useState(false)
-  return (
-    <div className={`faq-item${open ? ' faq-item--open' : ''}`}>
-      <button className="faq-item__q" onClick={() => setOpen(o => !o)} aria-expanded={open}>
-        <span>{item.q}</span>
-        <ChevronDown size={18} className="faq-item__chevron" />
-      </button>
-      {open && <p className="faq-item__a">{item.a}</p>}
-    </div>
-  )
+const iconMap = {
+  Wrench, Handshake, Lightbulb, ClipboardCheck, Award,
+  Factory, Ruler, Zap, FileText, BadgeCheck, Receipt,
 }
 
 export default function AboutPage() {
@@ -27,97 +19,108 @@ export default function AboutPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0)
-    document.title = 'About Sri Ayyan Fabs | Bangalore Fabrication Specialists'
+    document.title = 'About Sri Ayyan Fabs | Precision Fabrication, Bangalore'
     const meta = document.querySelector('meta[name="description"]')
-    if (meta) meta.setAttribute('content', 'Learn about Sri Ayyan Fabs — Bangalore\'s precision fabrication specialists. In-house engineering, own workshop, 1000+ projects delivered.')
-
+    if (meta) meta.setAttribute('content', "Learn about Sri Ayyan Fabs — Bangalore's precision fabrication specialists. In-house engineering, own workshop, 1000+ projects delivered.")
     const observer = new IntersectionObserver(
-      (entries) => {
+      entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
-              el.classList.add('visible')
-            })
+            entry.target.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(el => el.classList.add('visible'))
           }
         })
       },
-      { threshold: 0.08 }
+      { threshold: 0.07 }
     )
     sectionsRef.current.forEach(el => { if (el) observer.observe(el) })
     return () => observer.disconnect()
   }, [])
 
-  const addRef = (el) => { if (el && !sectionsRef.current.includes(el)) sectionsRef.current.push(el) }
+  const addRef = el => { if (el && !sectionsRef.current.includes(el)) sectionsRef.current.push(el) }
 
   return (
     <>
-      {/* Page Hero */}
-      <section className="page-hero">
+      {/* ── Hero ── */}
+      <section className="about-hero" style={{ backgroundImage: `url(${heroBg})` }}>
         <div className="container">
           <nav className="page-hero__breadcrumb" aria-label="Breadcrumb">
             <Link to="/">Home</Link>
             <ChevronRight size={14} />
-            <span>About</span>
+            <span>About Us</span>
           </nav>
-          <h1 className="page-hero__title">About Sri Ayyan Fabs</h1>
-          <p className="page-hero__sub">
+          <h1 className="about-hero__title">
+            Built on Precision.<br />
+            Grown on Trust.<br />
+            Powered by Craftsmanship.
+          </h1>
+          <p className="about-hero__sub">
             Bangalore's precision fabrication specialists — built on engineering discipline, quality materials, and a culture of delivery.
           </p>
+          <div className="about-hero__stats">
+            {[['1,000+', 'Projects Delivered'], ['800+', 'Clients Served'], ['10+', 'Years in Bangalore'], ['8', 'Core Services']].map(([num, label]) => (
+              <div key={label} className="about-hero__stat">
+                <span className="about-hero__stat-num">{num}</span>
+                <span className="about-hero__stat-label">{label}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Who We Are */}
-      <section className="about-intro" ref={addRef}>
+      {/* ── Story + Mission/Vision ── */}
+      <section className="about-story" ref={addRef}>
         <div className="container">
-          <div className="about-intro__grid">
-            <div className="about-intro__content reveal-left">
+          <div className="about-story__grid">
+            <div className="about-story__left reveal-left">
               <span className="section-label">Who We Are</span>
-              <h2 className="section-heading">Engineering-Led Fabrication Since Day One</h2>
-              <p className="about-intro__body">
-                Sri Ayyan Fabs is a Bangalore-based precision fabrication company serving commercial, industrial, and residential clients across the city. We fabricate and install aluminium systems, MS steel structures, ACP cladding, glass partitions, industrial roofing, and custom metalwork — with in-house engineering support and our own workshop production.
-              </p>
-              <p className="about-intro__body">
-                We are not a general contractor. We are specialist fabricators — a team of engineers, skilled welders, and installation technicians who have delivered 1,000+ projects across Bangalore's commercial, industrial, and residential sectors.
-              </p>
-              <Link to="/services" className="btn-primary about-intro__cta">
+              <h2 className="section-heading">Our Story</h2>
+              {companyStory.map((para, i) => (
+                <p key={i} className="about-story__para">{para}</p>
+              ))}
+              <Link to="/services" className="btn-primary about-story__cta">
                 Explore Our Services
               </Link>
             </div>
-            <div className="about-intro__cards reveal-right">
-              <div className="about-mv-card about-mv-card--mission">
-                <span className="about-mv-card__label">Our Mission</span>
-                <p className="about-mv-card__text">
-                  To deliver fabrication that engineers are proud of — on time, to specification, and built to outlast the building it serves.
-                </p>
+            <div className="about-story__right reveal-right">
+              <div className="about-story__photo-wrap">
+                <img src={img('images/about-overview.jpg')} alt="Sri Ayyan Fabs workshop" className="about-story__photo" loading="lazy" />
+                <div className="about-story__photo-badge">
+                  <span className="about-story__photo-badge-num">10+</span>
+                  <span className="about-story__photo-badge-label">Years in Bangalore</span>
+                </div>
               </div>
-              <div className="about-mv-card about-mv-card--vision">
-                <span className="about-mv-card__label">Our Vision</span>
-                <p className="about-mv-card__text">
-                  To be Bangalore's most trusted precision fabrication company — the first call for every architect, contractor, and developer who refuses to compromise.
-                </p>
+              <div className="about-mv about-mv--mission">
+                <span className="about-mv__label">Our Mission</span>
+                <p className="about-mv__text">{mission}</p>
+              </div>
+              <div className="about-mv about-mv--vision">
+                <span className="about-mv__label">Our Vision</span>
+                <p className="about-mv__text">{vision}</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Values */}
+      {/* ── Core Values ── */}
       <section className="about-values" ref={addRef}>
         <div className="container">
           <div className="about-values__header reveal">
             <span className="section-label">What We Stand For</span>
-            <h2 className="section-heading">Our Core Values</h2>
+            <h2 className="section-heading">Core Values</h2>
+            <p className="section-sub" style={{ margin: '0 auto' }}>The principles that guide every project we take on.</p>
           </div>
-          <div className="values-grid">
+          <div className="about-values__grid">
             {values.map((v, i) => {
-              const Icon = iconMap[v.icon] || Target
+              const Icon = iconMap[v.icon] || Award
               return (
-                <div key={i} className={`value-card reveal-scale delay-${(i % 3) + 1}`}>
-                  <div className="value-card__icon">
-                    <Icon size={22} strokeWidth={1.8} />
+                <div key={i} className={`about-value-card reveal-scale delay-${i + 1}`}>
+                  <div className="about-value-card__num">0{i + 1}</div>
+                  <div className="about-value-card__icon">
+                    <Icon size={24} strokeWidth={1.8} />
                   </div>
-                  <h3 className="value-card__title">{v.title}</h3>
-                  <p className="value-card__desc">{v.desc}</p>
+                  <h3 className="about-value-card__title">{v.title}</h3>
+                  <p className="about-value-card__desc">{v.desc}</p>
                 </div>
               )
             })}
@@ -125,28 +128,27 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Differentiators */}
-      <section className="about-diff" ref={addRef}>
+      {/* ── Why Choose Us ── */}
+      <section className="about-why" ref={addRef}>
         <div className="container">
-          <div className="about-diff__header reveal">
+          <div className="about-why__header reveal">
             <span className="section-label">Why Choose Us</span>
             <h2 className="section-heading">The Sri Ayyan Fabs Difference</h2>
-            <p className="section-sub" style={{ margin: '0 auto' }}>
-              Every fabricator claims quality. Here is what actually sets us apart.
-            </p>
+            <p className="section-sub" style={{ margin: '0 auto' }}>Every fabricator claims quality. Here is what actually sets us apart.</p>
           </div>
-          <div className="diff-grid">
+          <div className="about-why__grid">
             {differentiators.map((d, i) => {
-              const Icon = iconMap[d.icon] || ShieldCheck
+              const Icon = iconMap[d.icon] || BadgeCheck
               return (
-                <div key={i} className={`diff-card reveal delay-${(i % 3) + 1}`}>
-                  <div className="diff-card__icon">
-                    <Icon size={20} strokeWidth={1.8} />
+                <div key={i} className={`about-why-card reveal delay-${(i % 3) + 1}`}>
+                  <div className="about-why-card__top">
+                    <div className="about-why-card__icon">
+                      <Icon size={20} strokeWidth={1.8} />
+                    </div>
+                    <span className="about-why-card__num">{i + 1}</span>
                   </div>
-                  <div>
-                    <h3 className="diff-card__title">{d.heading}</h3>
-                    <p className="diff-card__body">{d.body}</p>
-                  </div>
+                  <h3 className="about-why-card__title">{d.heading}</h3>
+                  <p className="about-why-card__body">{d.body}</p>
                 </div>
               )
             })}
@@ -154,74 +156,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Industries */}
-      <section className="about-industries" ref={addRef}>
-        <div className="container">
-          <div className="about-industries__header reveal">
-            <span className="section-label">Who We Serve</span>
-            <h2 className="section-heading">Industries We Work In</h2>
-          </div>
-          <div className="industries-grid">
-            {industries.map((ind, i) => (
-              <div key={i} className={`industry-card reveal-scale delay-${(i % 3) + 1}`}>
-                <h4 className="industry-card__name">{ind.name}</h4>
-                <p className="industry-card__examples">{ind.examples}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="about-testimonials" ref={addRef}>
-        <div className="container">
-          <div className="about-testimonials__header reveal">
-            <span className="section-label">Client Voices</span>
-            <h2 className="section-heading">What Our Clients Say</h2>
-          </div>
-          <div className="testimonials-grid">
-            {testimonials.map((t, i) => (
-              <blockquote key={i} className={`testimonial-card reveal-scale delay-${i + 1}`}>
-                <p className="testimonial-card__quote">"{t.quote}"</p>
-                <footer className="testimonial-card__footer">
-                  <div className="testimonial-card__name">{t.name}</div>
-                  <div className="testimonial-card__role">{t.role}, {t.company}</div>
-                </footer>
-              </blockquote>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="about-faq" ref={addRef}>
-        <div className="container">
-          <div className="about-faq__header reveal">
-            <span className="section-label">Common Questions</span>
-            <h2 className="section-heading">Frequently Asked</h2>
-          </div>
-          <div className="faq-list">
-            {faqs.map((item, i) => <FAQItem key={i} item={item} />)}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="about-cta" ref={addRef}>
-        <div className="container">
-          <div className="about-cta__inner reveal">
-            <h2 className="about-cta__title">Ready to start your project?</h2>
-            <p className="about-cta__sub">Get a detailed quote within 2 hours. No obligation. No sales pressure.</p>
-            <div className="about-cta__actions">
-              <Link to="/#quote-form" className="btn-primary">Request a Free Quote</Link>
-              <a href="tel:+918904038295" className="btn-outline about-cta__call">
-                <Phone size={15} strokeWidth={2.2} />
-                Call +91 89040 38295
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   )
 }

@@ -28,7 +28,7 @@ export default function QuoteFormSection() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          entry.target.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+          entry.target.querySelectorAll('.reveal, .reveal-left, .reveal-right, .quote-benefit').forEach(el => {
             el.classList.add('visible')
           })
         }

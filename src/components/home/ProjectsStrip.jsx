@@ -1,18 +1,28 @@
 import { useEffect, useRef } from 'react'
-import { img } from '../utils/imgPath'
+import projC1 from '../../assets/proj-c1.jpg'
+import projA2 from '../../assets/proj-a2.jpg'
+import projG1 from '../../assets/proj-g1.jpg'
+import projP2 from '../../assets/proj-p2.jpg'
+import projC3 from '../../assets/proj-c3.jpg'
+import projA1 from '../../assets/proj-a1.jpg'
+import projP1 from '../../assets/proj-p1.jpg'
+import projG2 from '../../assets/proj-g2.jpg'
+import projC2 from '../../assets/proj-c2.jpg'
+import projP3 from '../../assets/proj-p3.jpg'
+import projG3 from '../../assets/proj-g3.jpg'
 
 const featured = [
-  { src: 'images/proj-c1.jpg', label: 'Commercial Facade' },
-  { src: 'images/proj-a2.jpg', label: 'Aluminium Works' },
-  { src: 'images/proj-g1.jpg', label: 'Gates & Grilles' },
-  { src: 'images/proj-p2.jpg', label: 'Frameless Glass' },
-  { src: 'images/proj-c3.jpg', label: 'ACP Cladding' },
-  { src: 'images/proj-a1.jpg', label: 'Aluminium Facade' },
-  { src: 'images/proj-p1.jpg', label: 'Patch Glass System' },
-  { src: 'images/proj-g2.jpg', label: 'Metal Gate' },
-  { src: 'images/proj-c2.jpg', label: 'Building Exterior' },
-  { src: 'images/proj-p3.jpg', label: 'Glass Partition' },
-  { src: 'images/proj-g3.jpg', label: 'Custom Fabrication' },
+  { src: projC1, label: 'Commercial Facade' },
+  { src: projA2, label: 'Aluminium Works' },
+  { src: projG1, label: 'Gates & Grilles' },
+  { src: projP2, label: 'Frameless Glass' },
+  { src: projC3, label: 'ACP Cladding' },
+  { src: projA1, label: 'Aluminium Facade' },
+  { src: projP1, label: 'Patch Glass System' },
+  { src: projG2, label: 'Metal Gate' },
+  { src: projC2, label: 'Building Exterior' },
+  { src: projP3, label: 'Glass Partition' },
+  { src: projG3, label: 'Custom Fabrication' },
 ]
 
 export default function ProjectsStrip() {
@@ -50,7 +60,7 @@ export default function ProjectsStrip() {
               className={`proj-strip__item reveal-scale delay-${(i % 4) + 1}`}
               aria-label={p.label}
             >
-              <img src={img(p.src)} alt={p.label} loading="lazy" />
+              <img src={p.src} alt={p.label} loading="lazy" />
               <div className="proj-strip__item-overlay">
                 <span>{p.label}</span>
               </div>

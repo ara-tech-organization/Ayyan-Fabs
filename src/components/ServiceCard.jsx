@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, Frame, Layers, Grid3x3, DoorOpen, Building2, ShieldCheck, Wrench, Fence } from 'lucide-react'
-import { img } from '../utils/imgPath'
 
 const iconMap = { Frame, Layers, Grid3x3, DoorOpen, Building2, ShieldCheck, Wrench, Fence }
 
@@ -10,7 +9,7 @@ export default function ServiceCard({ service, index = 0 }) {
     <article className={`service-card reveal-scale delay-${(index % 4) + 1}`}>
       {service.image && (
         <div className="service-card__img-wrap">
-          <img src={img(service.image)} alt={service.title} className="service-card__img" loading="lazy" />
+          <img src={service.image} alt={service.title} className="service-card__img" loading="lazy" />
           <div className="service-card__img-overlay" />
           <div className="service-card__icon-badge">
             <Icon size={20} strokeWidth={1.8} />

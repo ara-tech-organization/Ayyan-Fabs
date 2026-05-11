@@ -1,20 +1,18 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
-import { services } from '../data/servicesData'
-import ServiceCard from './ServiceCard'
+import { services } from '../../data/servicesData'
+import ServiceCard from '../ServiceCard'
 
 export default function ServicesSection() {
   const sectionRef = useRef(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
+      entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.reveal, .reveal-scale').forEach(el => {
-              el.classList.add('visible')
-            })
+            entry.target.querySelectorAll('.reveal, .reveal-scale').forEach(el => el.classList.add('visible'))
           }
         })
       },
@@ -37,13 +35,11 @@ export default function ServicesSection() {
             </p>
           </div>
         </div>
-
         <div className="services-grid">
           {services.map((svc, i) => (
             <ServiceCard key={svc.slug} service={svc} index={i} />
           ))}
         </div>
-
         <div className="services-footer reveal">
           <Link to="/services" className="btn-outline services-footer__btn">
             View All Services

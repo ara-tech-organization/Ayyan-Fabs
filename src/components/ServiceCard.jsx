@@ -24,8 +24,8 @@ export default function ServiceCard({ service, index = 0 }) {
       <div className="service-card__body">
         <h3 className="service-card__title">{service.title}</h3>
         <p className="service-card__desc">{service.cardDesc}</p>
-        <Link to={`/services/${service.slug}`} className="service-card__cta" aria-label={`Learn more about ${service.title}`}>
-          <span>Learn More</span>
+        <Link to={`/services/${service.slug}`} className="service-card__cta" aria-label={`Explore ${service.title}`}>
+          <span>Explore Service</span>
           <ArrowRight size={14} />
         </Link>
       </div>

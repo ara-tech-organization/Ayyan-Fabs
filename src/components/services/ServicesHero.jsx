@@ -11,10 +11,10 @@ export default function ServicesHero() {
           <ChevronRight size={14} />
           <span>Services</span>
         </nav>
-        <h1 className="page-hero__title">Our Fabrication Services</h1>
+        <p className="page-hero__tagline">Precision &amp; Engineering Excellence</p>
+        <h1 className="page-hero__title">Our Services</h1>
         <p className="page-hero__sub">
-          Eight core capabilities. One unified standard of precision. From aluminium glazing to structural steel —
-          Sri Ayyan Fabs delivers fabrication that performs and lasts.
+          Delivering high-end structural glazing and aluminium solutions with world-class craftsmanship.
         </p>
       </div>
     </section>

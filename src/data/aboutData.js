@@ -1,7 +1,7 @@
 export const companyStory = [
-  'Sri Ayyan Fabs was founded on a single conviction: that fabrication done right — with the correct materials, proper engineering, and genuine craftsmanship — delivers structures that stand strong for generations.',
-  'Based in Dasarahalli, Bangalore, we have grown from a focused aluminium fabrication unit into one of the region\'s most versatile and trusted fabrication companies. Today, we serve residential projects, commercial establishments, industrial facilities, and government contracts across Bangalore and beyond — all from our fully equipped fabrication facility.',
-  'Our team combines experienced engineers with skilled fabricators, CNC machine operators, and certified welders who take personal pride in the quality of every piece that leaves our yard. We don\'t just build to specifications — we build to last.',
+  'Sri Ayyan Fabs is a leading aluminium fabrication company based in Bangalore, specializing in premium-quality aluminium windows, doors, glass partitions, ACP cladding, sliding systems, structural steelwork, and custom interior solutions.',
+  'With a state-of-the-art fabrication unit equipped with in-house powder coating facilities, we are recognized as one of the premier fabrication houses in India. Our presence spans across private, public, and government sectors — delivering robust engineering support and exceptional craftsmanship for residential, commercial, and industrial projects.',
+  'From design consultation to final installation, we ensure precision, durability, and a modern aesthetic in every project we undertake. With over 21 years of hands-on experience, we have delivered 500+ premium projects — from luxury residences to large commercial complexes.',
 ]
 
 export const mission = 'To deliver fabrication solutions that are structurally sound, aesthetically refined, and economically efficient — making quality metalwork accessible to every project, regardless of scale.'
@@ -10,62 +10,67 @@ export const vision = 'To be South India\'s most trusted name in precision alumi
 
 export const values = [
   {
+    icon: 'Award',
+    title: 'ISI-Grade Materials',
+    desc: 'Only branded, certified aluminium sections and hardware used in every project.',
+  },
+  {
     icon: 'Wrench',
-    title: 'Precision',
-    desc: 'Every cut, weld, and fit is measured — not guessed.',
-  },
-  {
-    icon: 'Handshake',
-    title: 'Trust',
-    desc: 'We quote honestly, deliver on time, and stand behind our work.',
-  },
-  {
-    icon: 'Lightbulb',
-    title: 'Innovation',
-    desc: 'We solve fabrication challenges others walk away from.',
+    title: 'Expert Team',
+    desc: 'Skilled fabricators, designers, and installers with 21+ years of field experience.',
   },
   {
     icon: 'ClipboardCheck',
-    title: 'Accountability',
-    desc: 'One point of contact. One team. Full ownership of every project.',
+    title: 'On-Time Delivery',
+    desc: 'We commit to deadlines and deliver every project on schedule, always.',
   },
   {
-    icon: 'Award',
-    title: 'Quality',
-    desc: 'We use only branded materials — no substitutes, no shortcuts.',
+    icon: 'Handshake',
+    title: 'After-Sales Support',
+    desc: 'Dedicated warranty service and post-installation support for complete peace of mind.',
+  },
+  {
+    icon: 'Lightbulb',
+    title: 'Precision Craftsmanship',
+    desc: 'Every weld, every cut, every installation done with meticulous attention to detail.',
+  },
+  {
+    icon: 'Factory',
+    title: 'Custom Design Solutions',
+    desc: 'Bespoke solutions tailored to your exact requirements and aesthetic vision.',
   },
 ]
 
 export const differentiators = [
   {
     icon: 'Factory',
-    heading: 'Workshop-to-Site Capability',
-    body: 'We fabricate in our own yard and install with our own team — no subcontracting of critical work. You get consistent quality from the first weld to the final screw.',
+    heading: '21+ Years of Expertise',
+    body: 'A proven track record delivering 500+ successful projects across residential, commercial, and industrial sectors in and around Bangalore.',
   },
   {
-    icon: 'Ruler',
-    heading: 'Engineering-First Approach',
-    body: 'Every project begins with a technical review. We check site conditions, load requirements, material specifications, and code compliance before we cut a single piece.',
-  },
-  {
-    icon: 'Zap',
-    heading: 'Speed Without Shortcuts',
-    body: 'Our workshop processes are optimised for fast turnaround — most standard orders are fabricated and ready for installation within 7–14 working days without quality compromise.',
+    icon: 'Wrench',
+    heading: 'Precision Craftsmanship',
+    body: 'Every weld, every cut, every installation is done with meticulous attention to detail - ensuring a flawless finish and long-lasting durability.',
   },
   {
     icon: 'FileText',
     heading: 'Transparent Pricing',
-    body: 'We provide itemised quotations with material grade specifications, quantities, and unit rates. No hidden charges. No vague lump sum surprises.',
+    body: 'Honest, competitive pricing with no hidden charges. We provide detailed quotations and stick to the agreed budget, always.',
   },
   {
     icon: 'BadgeCheck',
-    heading: 'Proven Track Record',
-    body: '1,000+ projects completed. 800+ clients served. A Google-rated business with verifiable reviews from real Bangalore customers.',
+    heading: 'Site-to-Site Service',
+    body: 'From initial site measurement to final installation and clean-up - we handle every step professionally so you don\'t have to worry.',
   },
   {
-    icon: 'Receipt',
-    heading: 'GST & Corporate Ready',
-    body: 'GSTIN: 29AIYPR5034K1ZC. We provide full GST-compliant invoicing, TDS deduction support, and project documentation suitable for corporate and government procurement.',
+    icon: 'Lightbulb',
+    heading: 'Eco-Friendly Materials',
+    body: 'We use recyclable aluminium, energy-efficient glazing, and low-VOC coatings - contributing to greener, sustainable buildings.',
+  },
+  {
+    icon: 'Handshake',
+    heading: 'Dedicated After-Sales',
+    body: 'Our relationship doesn\'t end at installation. We provide prompt warranty support and scheduled maintenance for every project.',
   },
 ]
 

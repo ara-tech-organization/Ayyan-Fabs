@@ -12,10 +12,11 @@ export default function ContactHero() {
           <span>Contact</span>
         </nav>
         <h1 className="contact-hero__title">
-          Let's Build Something<br />Exceptional Together
+          Contact Lounge<br />
+          <span style={{ fontSize: '0.65em', fontWeight: 400 }}>Experience World-Class Consulting</span>
         </h1>
         <p className="contact-hero__sub">
-          Whether you have detailed drawings or just an idea — reach out. Our team responds within 2 hours during business hours.
+          Experience world-class fabrication consulting in our digital lounge. Let's build your vision into reality.
         </p>
       </div>
     </section>

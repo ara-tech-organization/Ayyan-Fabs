@@ -3,13 +3,13 @@ import { Phone, Mail, MapPin, Clock, FileText, ArrowUpRight, ChevronRight } from
 import logo from '../assets/Logo.jpg'
 
 const contactItems = [
-  { icon: Phone, label: 'Call / WhatsApp', value: '+91 89040 38295', href: 'tel:+918904038295' },
+  { icon: Phone, label: 'Call / WhatsApp', value: '+91 8904038295 / +91 8904098297', href: 'tel:+918904038295' },
   { icon: Mail, label: 'Email', value: 'sriayyanfabs@gmail.com', href: 'mailto:sriayyanfabs@gmail.com' },
   {
     icon: MapPin,
     label: 'Workshop Address',
-    value: 'No.69, 4th Cross, Royal Garden Layout, Amruthahalli Main Road, Dasarahalli, Bangalore – 560092',
-    href: 'https://maps.google.com/?q=Dasarahalli+Bangalore+560092',
+    value: 'No.69, 4th Cross, Royal Garden Layout, Opp Vikas Meadows Apartment, Amruthahalli Main Road Dasarahalli, Bangalore – 560092',
+    href: 'https://maps.google.com/?q=No.69+4th+Cross+Royal+Garden+Layout+Amruthahalli+Bangalore+560092',
     external: true,
   },
   { icon: Clock, label: 'Business Hours', value: 'Monday – Saturday: 9:00 AM – 6:30 PM', href: null },
@@ -18,11 +18,10 @@ const contactItems = [
 
 const serviceLinks = [
   { label: 'Aluminium Fabrication', slug: 'aluminium-fabrication' },
+  { label: 'Structural Glazing', slug: 'patch-fitting-glass' },
+  { label: 'Patch Fitting & Glass', slug: 'patch-fitting-glass' },
+  { label: 'MS Works & Roofing', slug: 'industrial-roofing' },
   { label: 'ACP Cladding Works', slug: 'acp-cladding' },
-  { label: 'Patch Fitting & Frameless Glass', slug: 'patch-fitting-glass' },
-  { label: 'Custom Metal Gates', slug: 'custom-metal-gates' },
-  { label: 'Industrial Roofing', slug: 'industrial-roofing' },
-  { label: 'MS Steel Fabrication', slug: 'ms-steel-fabrication' },
 ]
 
 export default function Footer() {
@@ -40,13 +39,14 @@ export default function Footer() {
               </div>
             </Link>
             <p className="footer__brand-desc">
-              Bangalore's most trusted aluminium and structural steel fabrication experts.
-              Engineering precision on every project — no shortcuts, no compromises.
+              Sri Ayyan Fabs is a leader in premium glass, aluminium, and MS metal fabrication. With 26+ years of excellence
+              and state-of-the-art in-house facilities including powder coating, we deliver high-end solutions for corporate,
+              residential, and government sectors.
             </p>
             <div className="footer__badges">
-              <span className="footer__badge">ISO Compliant</span>
               <span className="footer__badge">GST Registered</span>
-              <span className="footer__badge">10+ Years</span>
+              <span className="footer__badge">26+ Years</span>
+              <span className="footer__badge">500+ Projects</span>
             </div>
           </div>
 
@@ -104,19 +104,25 @@ export default function Footer() {
           </div>
 
           <div className="footer__links-col">
-            <h3 className="footer__col-title">Company</h3>
+            <h3 className="footer__col-title">Quick Links</h3>
             <ul className="footer__links-list">
               <li>
                 <Link to="/" className="footer__nav-link"><ChevronRight size={14} />Home</Link>
               </li>
               <li>
-                <Link to="/about" className="footer__nav-link"><ChevronRight size={14} />About Us</Link>
+                <Link to="/about" className="footer__nav-link"><ChevronRight size={14} />About</Link>
               </li>
               <li>
-                <Link to="/services" className="footer__nav-link"><ChevronRight size={14} />All Services</Link>
+                <Link to="/projects" className="footer__nav-link"><ChevronRight size={14} />Projects</Link>
               </li>
               <li>
-                <a href="#quote-form" className="footer__nav-link"><ChevronRight size={14} />Get a Quote</a>
+                <Link to="/services" className="footer__nav-link"><ChevronRight size={14} />Services</Link>
+              </li>
+              <li>
+                <Link to="/industries" className="footer__nav-link"><ChevronRight size={14} />Trusted Brands</Link>
+              </li>
+              <li>
+                <Link to="/contact" className="footer__nav-link"><ChevronRight size={14} />Contact</Link>
               </li>
             </ul>
           </div>

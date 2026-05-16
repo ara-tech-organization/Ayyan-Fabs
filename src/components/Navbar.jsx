@@ -5,11 +5,11 @@ import logo from '../assets/Logo.jpg'
 
 const navLinks = [
   { to: '/', label: 'Home', end: true },
-  { to: '/services', label: 'Services' },
   { to: '/about', label: 'About' },
-  { to: '/industries', label: 'Industries & FAQ' },
-  { to: '/testimonials', label: 'Testimonials' },
-  { to: '/blog', label: 'Blog' },
+  { to: '/projects', label: 'Projects' },
+  { to: '/services', label: 'Services' },
+  { to: '/industries', label: 'Trusted Brands' },
+  { to: '/about', label: 'Why Us' },
   { to: '/contact', label: 'Contact' },
 ]
 

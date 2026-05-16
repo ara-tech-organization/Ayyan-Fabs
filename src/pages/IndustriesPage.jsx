@@ -9,9 +9,9 @@ export default function IndustriesPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0)
-    document.title = 'Industries & FAQ | Sri Ayyan Fabs Bangalore'
+    document.title = 'Trusted Brands | Sri Ayyan Fabs Bangalore'
     const meta = document.querySelector('meta[name="description"]')
-    if (meta) meta.setAttribute('content', 'Industries served by Sri Ayyan Fabs across Bangalore — commercial, industrial, residential, healthcare and more. Plus answers to frequently asked questions.')
+    if (meta) meta.setAttribute('content', 'Sri Ayyan Fabs partners with industry-leading brands — Tata Steel, Jindal Aluminium, AIS Glass, Alstone, Hilti and more for quality fabrication in Bangalore.')
 
     const observer = new IntersectionObserver(
       entries => {

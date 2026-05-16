@@ -1,33 +1,33 @@
 import { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react'
-import h1 from '../assets/h1.png'
-import h2 from '../assets/h2.png'
-import h3 from '../assets/h3.png'
+import h1 from '../../assets/h1.png'
+import h2 from '../../assets/h2.png'
+import h3 from '../../assets/h3.png'
 
 const slides = [
   {
     tag: 'Bangalore\'s #1 Fabrication Company',
-    headline: "Bangalore's Most Trusted Fabrication Experts — 1,000+ Projects. Zero Compromises.",
-    sub: 'From precision aluminium systems to heavy-duty MS steel structures — Sri Ayyan Fabs delivers fabrication solutions that outlast expectations, on time and on budget.',
-    cta1: { text: 'Get a Free Quote', to: '/contact' },
-    cta2: { text: 'Our Projects', to: '/services' },
+    headline: 'Crafting Excellence in Aluminium & Glass Fabrication',
+    sub: 'Delivering high-quality aluminium works and custom fabrication solutions - built with precision, installed with pride.',
+    cta1: { text: 'View Projects', to: '/projects' },
+    cta2: { text: 'Get a Free Quote', to: '/contact' },
     img: h1,
   },
   {
     tag: 'Engineering Excellence',
     headline: 'Built Stronger. Finished Finer. Delivered Faster.',
     sub: 'We bring engineering precision and aesthetic excellence to every aluminium frame, steel structure, and cladding panel we build.',
-    cta1: { text: 'Get a Free Quote', to: '/contact' },
-    cta2: { text: 'Our Projects', to: '/services' },
+    cta1: { text: 'View Projects', to: '/projects' },
+    cta2: { text: 'Get a Free Quote', to: '/contact' },
     img: h2,
   },
   {
     tag: 'End-to-End Solutions',
     headline: 'From Blueprint to Build — We Handle Everything.',
     sub: 'Site survey. Custom fabrication. Professional installation. Complete project support. One partner for the entire journey.',
-    cta1: { text: 'Get a Free Quote', to: '/contact' },
-    cta2: { text: 'Our Projects', to: '/services' },
+    cta1: { text: 'View Projects', to: '/projects' },
+    cta2: { text: 'Get a Free Quote', to: '/contact' },
     img: h3,
   },
 ]

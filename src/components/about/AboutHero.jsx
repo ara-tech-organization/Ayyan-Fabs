@@ -3,10 +3,10 @@ import { ChevronRight } from 'lucide-react'
 import heroBg from '../../assets/h2.png'
 
 const stats = [
-  ['1,000+', 'Projects Delivered'],
-  ['800+', 'Clients Served'],
-  ['10+', 'Years in Bangalore'],
-  ['8', 'Core Services'],
+  ['21+', 'Years Experience'],
+  ['500+', 'Projects Completed'],
+  ['300+', 'Clients Served'],
+  ['100%', 'Satisfaction Rate'],
 ]
 
 export default function AboutHero() {
@@ -19,12 +19,11 @@ export default function AboutHero() {
           <span>About Us</span>
         </nav>
         <h1 className="about-hero__title">
-          Built on Precision.<br />
-          Grown on Trust.<br />
-          Powered by Craftsmanship.
+          Engineering Excellence<br />
+          &amp; Premium Craftsmanship
         </h1>
         <p className="about-hero__sub">
-          Bangalore's precision fabrication specialists — built on engineering discipline, quality materials, and a culture of delivery.
+          Leading the industry in modern aluminium fabrication and structural solutions since 21+ years.
         </p>
         <div className="about-hero__stats">
           {stats.map(([num, label]) => (

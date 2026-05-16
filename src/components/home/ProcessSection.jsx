@@ -1,30 +1,24 @@
 import { useEffect, useRef } from 'react'
-import { MapPin, FileText, Factory, PackageCheck } from 'lucide-react'
+import { MapPin, Factory, PackageCheck } from 'lucide-react'
 
 const steps = [
   {
     icon: MapPin,
     number: '01',
-    label: 'Site Survey & Consultation',
-    copy: 'We begin with a free site visit to understand your requirements in detail — structural conditions, aesthetic goals, budget parameters, and timeline expectations. We don\'t quote from photos; we assess from site.',
-  },
-  {
-    icon: FileText,
-    number: '02',
-    label: 'Design, Material Selection & Quotation',
-    copy: 'Our engineering team prepares fabrication drawings and a detailed Bill of Materials with branded components. You receive a transparent, itemised quotation — no vague estimates. Changes? We revise until you\'re fully aligned.',
+    label: 'Design Consultation',
+    copy: 'One-on-one consultation and on-site survey from project inception, ensuring your vision is captured with precision.',
   },
   {
     icon: Factory,
-    number: '03',
-    label: 'Workshop Fabrication',
-    copy: 'Manufacturing begins only after drawing approval. Every component is cut, formed, and welded in our own fabrication yard using CNC machinery, calibrated welding equipment, and branded materials. We don\'t outsource fabrication — ever.',
+    number: '02',
+    label: 'Precision Fabrication',
+    copy: 'Crafting with the finest branded components, superior glazing, and trusted hardware for top-notch quality results.',
   },
   {
     icon: PackageCheck,
-    number: '04',
-    label: 'Delivery, Installation & Handover',
-    copy: 'Completed components are individually protected and transported to site. Our trained installation team handles the fit-out to precise tolerances. We don\'t hand over until every joint is perfect, every surface is clean, and you\'ve signed off on satisfaction.',
+    number: '03',
+    label: 'Delivery & Installation',
+    copy: 'Each product is individually wrapped, safely delivered, and professionally installed by our expert team on-site.',
   },
 ]
 
@@ -51,9 +45,9 @@ export default function ProcessSection() {
       <div className="container">
         <div className="process-header reveal">
           <span className="section-label">How We Work</span>
-          <h2 className="section-heading">How We Deliver Every Project — 4 Precise Steps</h2>
+          <h2 className="section-heading">The Sri Ayyan Fabs Experience</h2>
           <p className="section-sub">
-            From first call to final installation, our process is built for clarity, speed, and zero surprises.
+            A seamless, professionally managed journey from initial concept to final perfection.
           </p>
         </div>
 

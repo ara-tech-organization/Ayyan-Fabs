@@ -9,11 +9,11 @@ export default function IndustriesHero() {
         <nav className="page-hero__breadcrumb" aria-label="Breadcrumb">
           <Link to="/">Home</Link>
           <ChevronRight size={14} />
-          <span>Industries & FAQ</span>
+          <span>Trusted Brands</span>
         </nav>
-        <h1 className="page-hero__title">Industries & Frequently Asked Questions</h1>
+        <h1 className="page-hero__title">Our Trusted Brand Partners</h1>
         <p className="page-hero__sub">
-          Every sector. Every question. One trusted fabrication partner in Bangalore.
+          We collaborate with industry-leading brands to ensure quality, durability, and performance at every stage of fabrication and installation.
         </p>
       </div>
     </section>

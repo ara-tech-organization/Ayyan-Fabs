@@ -27,11 +27,11 @@ export default function ServicesSection() {
       <div className="container">
         <div className="services-header">
           <div className="reveal">
-            <span className="section-label">Our Capabilities</span>
-            <h2 className="section-heading">What We Build Best</h2>
+            <span className="section-label">Our Expertise</span>
+            <h2 className="section-heading">Premium Services We Deliver</h2>
             <p className="section-sub">
-              Eight core fabrication capabilities. One unified standard — excellence at every joint, weld, and finish.
-              Sri Ayyan Fabs brings precision engineering to every structure we touch.
+              Delivering world-class aluminium fabrication, glass solutions, and structural engineering with precision,
+              innovation, and unwavering commitment to quality.
             </p>
           </div>
         </div>

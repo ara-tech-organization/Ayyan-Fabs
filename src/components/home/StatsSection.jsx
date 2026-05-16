@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from 'react'
 import { TrendingUp, Users, Award, Handshake } from 'lucide-react'
 
 const stats = [
-  { icon: TrendingUp, value: 1000, suffix: '+', label: 'Projects Delivered',   sub: 'Across Bangalore and beyond' },
-  { icon: Users,      value: 800,  suffix: '+', label: 'Satisfied Clients',     sub: 'From apartments to industrial parks' },
-  { icon: Award,      value: 100,  suffix: '%', label: 'Quality Satisfaction',  sub: 'Our standard, not our target' },
-  { icon: Handshake,  value: 15,   suffix: '+', label: 'Brand Partners',        sub: 'Certified material suppliers only' },
+  { icon: TrendingUp, value: 1000, suffix: '+', label: 'Projects Delivered',  sub: 'Embarking on Over 1000 Successful Projects and Counting' },
+  { icon: Users,      value: 800,  suffix: '+', label: 'Satisfied Clients',    sub: 'Served a Diverse Community of 800+ Satisfied Clients and Growing' },
+  { icon: Award,      value: 100,  suffix: '%', label: 'Quality Satisfaction', sub: 'Achieving 100% Satisfaction in Every Interaction' },
+  { icon: Handshake,  value: 21,   suffix: '+', label: 'Years of Excellence',  sub: '21+ Years of Trusted Fabrication Expertise' },
 ]
 
 function useCountUp(target, started, duration = 2000) {

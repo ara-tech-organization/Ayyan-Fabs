@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { CheckCircle2 } from 'lucide-react'
-import aboutOverview from '../../assets/about-overview.jpg'
+import aboutOverview from '../../assets/about-main.png'
 import { companyStory, coreStrengths } from '../../data/aboutData'
 
 export default function AboutStory({ addRef }) {

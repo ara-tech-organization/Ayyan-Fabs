@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
-import aboutOverview from '../../assets/about-overview.jpg'
+import aboutOverview from '../../assets/home-about.png'
 
 const features = [
   { num: '01', title: 'ISI-Grade Materials', desc: 'Certified aluminium sections and hardware on every project.' },

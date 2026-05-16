@@ -1,28 +1,19 @@
 import { useEffect, useRef } from 'react'
-import projC1 from '../../assets/proj-c1.jpg'
-import projA2 from '../../assets/proj-a2.jpg'
-import projG1 from '../../assets/proj-g1.jpg'
-import projP2 from '../../assets/proj-p2.jpg'
-import projC3 from '../../assets/proj-c3.jpg'
-import projA1 from '../../assets/proj-a1.jpg'
-import projP1 from '../../assets/proj-p1.jpg'
-import projG2 from '../../assets/proj-g2.jpg'
-import projC2 from '../../assets/proj-c2.jpg'
-import projP3 from '../../assets/proj-p3.jpg'
-import projG3 from '../../assets/proj-g3.jpg'
+
+const g = (import.meta.env.BASE_URL || '/') + 'gallery/'
 
 const featured = [
-  { src: projC1, label: 'Commercial Facade' },
-  { src: projA2, label: 'Aluminium Works' },
-  { src: projG1, label: 'Gates & Grilles' },
-  { src: projP2, label: 'Frameless Glass' },
-  { src: projC3, label: 'ACP Cladding' },
-  { src: projA1, label: 'Aluminium Facade' },
-  { src: projP1, label: 'Patch Glass System' },
-  { src: projG2, label: 'Metal Gate' },
-  { src: projC2, label: 'Building Exterior' },
-  { src: projP3, label: 'Glass Partition' },
-  { src: projG3, label: 'Custom Fabrication' },
+  { src: g + 'aluminium-window-frame-installation.jpg', label: 'Aluminium Window Frame' },
+  { src: g + 'aluminium-office-partition.jpg',          label: 'Aluminium Office Partition' },
+  { src: g + 'aluminium-glass-frame-design.jpg',        label: 'Aluminium Glass Frame' },
+  { src: g + 'godrej-park-retreat-2024.jpg',            label: 'Godrej Park Retreat 2024' },
+  { src: g + 'exterior-wall-cladding-panel.jpg',        label: 'Exterior Wall Cladding' },
+  { src: g + 'acp-cladding-commercial-building.jpg',    label: 'ACP Cladding' },
+  { src: g + 'glass-door-patch-fitting.jpg',            label: 'Glass Door Patch Fitting' },
+  { src: g + 'frameless-glass-installation.jpg',        label: 'Frameless Glass' },
+  { src: g + 'modern-ms-gate-design.jpg',               label: 'Modern MS Gate' },
+  { src: g + 'metal-sheet-roofing-work.jpg',            label: 'Metal Sheet Roofing' },
+  { src: g + 'custom-fabrication-work.jpg',             label: 'Custom Fabrication' },
 ]
 
 export default function ProjectsStrip() {

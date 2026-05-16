@@ -1,32 +1,56 @@
 import { Link } from 'react-router-dom'
 import { ChevronRight, CheckCircle2, Phone, Mail, ArrowRight } from 'lucide-react'
 import { services } from '../../data/servicesData'
-import projA1 from '../../assets/proj-a1.jpg'
-import projA2 from '../../assets/proj-a2.jpg'
-import projA3 from '../../assets/proj-a3.jpg'
-import projP1 from '../../assets/proj-p1.jpg'
-import projP2 from '../../assets/proj-p2.jpg'
-import projP3 from '../../assets/proj-p3.jpg'
-import projG1 from '../../assets/proj-g1.jpg'
-import projG2 from '../../assets/proj-g2.jpg'
-import projG3 from '../../assets/proj-g3.jpg'
-import projC1 from '../../assets/proj-c1.jpg'
-import projC2 from '../../assets/proj-c2.jpg'
-import projC3 from '../../assets/proj-c3.jpg'
-import svcGrill from '../../assets/svc-grill.jpg'
-import svcMs from '../../assets/svc-ms.jpg'
+
+const g = (import.meta.env.BASE_URL || '/') + 'gallery/'
 
 const showcaseImgMap = {
-  'aluminium-fabrication':  [projA1, projA2, projA3, projA1, projA2],
-  'glass-solutions':        [projP1, projP2, projP3, projP1, projP2],
-  'sliding-folding-systems':[projG1, projG2, projG3, projG1, projG2],
-  'acp-cladding':           [projC1, projC2, projC3, projC1, projC2],
-  'custom-interiors':       [projA1, projP1, projG1, projC1, projP2],
-  'structural-fabrication': [projG1, projG2, projC1, svcGrill, svcMs],
+  'aluminium-fabrication':  [
+    g + 'aluminium-window-frame-installation.jpg',
+    g + 'aluminium-office-partition.jpg',
+    g + 'aluminium-glass-frame-design.jpg',
+    g + 'godrej-park-retreat-2024.jpg',
+    g + 'aluminium-window-frame-installation.jpg',
+  ],
+  'glass-solutions':        [
+    g + 'glass-door-patch-fitting.jpg',
+    g + 'frameless-glass-installation.jpg',
+    g + 'glass-door-patch-fitting.jpg',
+    g + 'frameless-glass-installation.jpg',
+    g + 'glass-door-patch-fitting.jpg',
+  ],
+  'sliding-folding-systems':[
+    g + 'modern-ms-gate-design.jpg',
+    g + 'sliding-gate-fabrication.jpg',
+    g + 'modern-ms-gate-design.jpg',
+    g + 'sliding-gate-fabrication.jpg',
+    g + 'modern-ms-gate-design.jpg',
+  ],
+  'acp-cladding':           [
+    g + 'exterior-wall-cladding-panel.jpg',
+    g + 'acp-cladding-commercial-building.jpg',
+    g + 'exterior-wall-cladding-panel.jpg',
+    g + 'acp-cladding-commercial-building.jpg',
+    g + 'exterior-wall-cladding-panel.jpg',
+  ],
+  'custom-interiors':       [
+    g + 'aluminium-office-partition.jpg',
+    g + 'frameless-glass-installation.jpg',
+    g + 'glass-door-patch-fitting.jpg',
+    g + 'aluminium-glass-frame-design.jpg',
+    g + 'on-site-installation.jpg',
+  ],
+  'structural-fabrication': [
+    g + 'modern-ms-gate-design.jpg',
+    g + 'sliding-gate-fabrication.jpg',
+    g + 'metal-sheet-roofing-work.jpg',
+    g + 'industrial-roof-installation.jpg',
+    g + 'custom-fabrication-work.jpg',
+  ],
 }
 
 export default function ServiceBody({ service, slug }) {
-  const imgs = showcaseImgMap[slug] || [projA1, projA2, projA3, projA1, projA2]
+  const imgs = showcaseImgMap[slug] || showcaseImgMap['aluminium-fabrication']
 
   return (
     <section className="svc-body">

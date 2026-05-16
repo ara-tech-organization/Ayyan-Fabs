@@ -1,17 +1,23 @@
-import projC1 from '../assets/proj-c1.jpg'
-import projA1 from '../assets/proj-a1.jpg'
-import projP1 from '../assets/proj-p1.jpg'
-import projG1 from '../assets/proj-g1.jpg'
-import projC2 from '../assets/proj-c2.jpg'
-import projA2 from '../assets/proj-a2.jpg'
-import projP2 from '../assets/proj-p2.jpg'
-import projG2 from '../assets/proj-g2.jpg'
-import projC3 from '../assets/proj-c3.jpg'
-import projA3 from '../assets/proj-a3.jpg'
-import projP3 from '../assets/proj-p3.jpg'
-import projG3 from '../assets/proj-g3.jpg'
+const g = (import.meta.env.BASE_URL || '/') + 'gallery/'
 
-const imgs = [projC1, projA1, projP1, projG1, projC2, projA2, projP2, projG2, projC3, projA3, projP3, projG3]
+const imgs = [
+  g + 'aluminium-window-frame-installation.jpg',
+  g + 'godrej-park-retreat-2024.jpg',
+  g + 'aluminium-office-partition.jpg',
+  g + 'aluminium-glass-frame-design.jpg',
+  g + 'exterior-wall-cladding-panel.jpg',
+  g + 'acp-cladding-commercial-building.jpg',
+  g + 'glass-door-patch-fitting.jpg',
+  g + 'frameless-glass-installation.jpg',
+  g + 'modern-ms-gate-design.jpg',
+  g + 'sliding-gate-fabrication.jpg',
+  g + 'metal-sheet-roofing-work.jpg',
+  g + 'industrial-roof-installation.jpg',
+  g + 'road-safety-barrication.jpg',
+  g + 'construction-site-barricade.jpg',
+  g + 'custom-fabrication-work.jpg',
+  g + 'on-site-installation.jpg',
+]
 const img = i => imgs[i % imgs.length]
 
 const resCaptions  = ['Exterior Facade', 'Premium Windows', 'Structural Glass', 'Modern Architecture', 'Exterior Finish', 'Premium Framing']

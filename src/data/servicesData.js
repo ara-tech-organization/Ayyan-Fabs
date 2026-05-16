@@ -1,9 +1,9 @@
-import svcAluminium from '../assets/svc-aluminium.jpg'
-import svcAcp from '../assets/svc-acp.jpg'
-import svcGlass from '../assets/svc-glass.jpg'
-import svcGate from '../assets/svc-gate.jpg'
-import svcGrill from '../assets/svc-grill.jpg'
-import svcMs from '../assets/svc-ms.jpg'
+import svcAluminium from '../assets/svc-aluminium.png'
+import svcAcp from '../assets/svc-acp.png'
+import svcGlass from '../assets/svc-glass.png'
+import svcGate from '../assets/svc-sliding.png'
+import svcGrill from '../assets/svc-interior.png'
+import svcMs from '../assets/svc-ms.png'
 
 export const services = [
   {

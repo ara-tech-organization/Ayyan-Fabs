@@ -1,4 +1,10 @@
 import { testimonials } from '../../data/aboutData'
+import photoRajesh from '../../assets/testimonials/rajesh.png'
+import photoPriya   from '../../assets/testimonials/priya.png'
+import photoMurali  from '../../assets/testimonials/murali.png'
+import photoAmit    from '../../assets/testimonials/amit.png'
+
+const photos = [photoRajesh, photoAmit, photoPriya, photoMurali]
 
 export default function TestimonialsGrid({ addRef }) {
   return (
@@ -11,7 +17,7 @@ export default function TestimonialsGrid({ addRef }) {
               <p className="tpage-card__text">{t.quote}</p>
               <footer className="tpage-card__footer">
                 <div className="tpage-card__author">
-                  <div className="tpage-card__avatar">{t.name.charAt(0)}</div>
+                  <img src={photos[i]} alt={t.name} className="tpage-card__avatar" />
                   <div>
                     <div className="tpage-card__name">— {t.name}</div>
                     <div className="tpage-card__role">{t.role}</div>

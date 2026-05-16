@@ -55,7 +55,7 @@ export default function TrustedBrandsPage() {
               </div>
               <div className="tb-marquee-wrap">
                 <div className="tb-marquee">
-                  {[...cat.brands, ...cat.brands].map((brand, j) => (
+                  {(() => { const min = Math.ceil(8 / cat.brands.length); const arr = Array.from({ length: min * 2 }, (_, i) => cat.brands[i % cat.brands.length]); return arr })().map((brand, j) => (
                     <div key={j} className="tb-logo-card">
                       <img src={brand.logo} alt={brand.name} loading="lazy" />
                       <span className="tb-logo-card__name">{brand.name}</span>

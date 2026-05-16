@@ -1,42 +1,24 @@
 import { useState } from 'react'
-import projA1 from '../../assets/proj-a1.jpg'
-import projA2 from '../../assets/proj-a2.jpg'
-import projA3 from '../../assets/proj-a3.jpg'
-import projP1 from '../../assets/proj-p1.jpg'
-import projP2 from '../../assets/proj-p2.jpg'
-import projP3 from '../../assets/proj-p3.jpg'
-import projG1 from '../../assets/proj-g1.jpg'
-import projG2 from '../../assets/proj-g2.jpg'
-import projG3 from '../../assets/proj-g3.jpg'
-import projC1 from '../../assets/proj-c1.jpg'
-import projC2 from '../../assets/proj-c2.jpg'
-import projC3 from '../../assets/proj-c3.jpg'
-import svcRoofing from '../../assets/svc-roofing.jpg'
-import svcBarricade from '../../assets/svc-barricade.jpg'
-import svcMs from '../../assets/svc-ms.jpg'
-import svcGrill from '../../assets/svc-grill.jpg'
+
+const g = (import.meta.env.BASE_URL || '/') + 'gallery/'
 
 const galleryItems = [
-  { title: 'Aluminium Window Frame Installation', category: 'Aluminium', img: projA1 },
-  { title: 'Aluminium Sliding Door Work',         category: 'Aluminium', img: projA2 },
-  { title: 'Aluminium Office Partition',           category: 'Aluminium', img: projA3 },
-  { title: 'Aluminium Glass Frame Design',         category: 'Aluminium', img: projA1 },
-  { title: 'Exterior Wall Cladding Panel',         category: 'Cladding',  img: projC1 },
-  { title: 'ACP Cladding Commercial Building',     category: 'Cladding',  img: projC2 },
-  { title: 'Elevation Cladding Design',            category: 'Cladding',  img: projC3 },
-  { title: 'Glass Door Patch Fitting',             category: 'Patch Fitting', img: projP1 },
-  { title: 'Frameless Glass Installation',         category: 'Patch Fitting', img: projP2 },
-  { title: 'Modern MS Gate Design',                category: 'Gates',     img: projG1 },
-  { title: 'Sliding Gate Fabrication',             category: 'Gates',     img: projG2 },
-  { title: 'Metal Sheet Roofing Work',             category: 'Roofing',   img: svcRoofing },
-  { title: 'Industrial Roof Installation',         category: 'Roofing',   img: svcRoofing },
-  { title: 'Road Safety Barrication',              category: 'Barrication', img: svcBarricade },
-  { title: 'Construction Site Barricade',          category: 'Barrication', img: svcBarricade },
-  { title: 'MS Steel Structure Work',              category: 'MS Steel',  img: svcMs },
-  { title: 'Heavy Steel Fabrication',              category: 'MS Steel',  img: svcGrill },
-  { title: 'Industrial Frame Welding',             category: 'MS Steel',  img: svcMs },
-  { title: 'Custom Fabrication Work',              category: 'Miscellaneous', img: projP3 },
-  { title: 'On-Site Installation',                 category: 'Miscellaneous', img: projG3 },
+  { title: 'Aluminium Window Frame Installation', category: 'Aluminium',    img: g + 'aluminium-window-frame-installation.jpg' },
+  { title: 'Aluminium Office Partition',          category: 'Aluminium',    img: g + 'aluminium-office-partition.jpg' },
+  { title: 'Aluminium Glass Frame Design',        category: 'Aluminium',    img: g + 'aluminium-glass-frame-design.jpg' },
+  { title: 'Godrej Park Retreat 2024',            category: 'Aluminium',    img: g + 'godrej-park-retreat-2024.jpg' },
+  { title: 'Exterior Wall Cladding Panel',        category: 'Cladding',     img: g + 'exterior-wall-cladding-panel.jpg' },
+  { title: 'ACP Cladding Commercial Building',    category: 'Cladding',     img: g + 'acp-cladding-commercial-building.jpg' },
+  { title: 'Glass Door Patch Fitting',            category: 'Patch Fitting', img: g + 'glass-door-patch-fitting.jpg' },
+  { title: 'Frameless Glass Installation',        category: 'Patch Fitting', img: g + 'frameless-glass-installation.jpg' },
+  { title: 'Modern MS Gate Design',               category: 'Gates',         img: g + 'modern-ms-gate-design.jpg' },
+  { title: 'Sliding Gate Fabrication',            category: 'Gates',         img: g + 'sliding-gate-fabrication.jpg' },
+  { title: 'Metal Sheet Roofing Work',            category: 'Roofing',       img: g + 'metal-sheet-roofing-work.jpg' },
+  { title: 'Industrial Roof Installation',        category: 'Roofing',       img: g + 'industrial-roof-installation.jpg' },
+  { title: 'Road Safety Barrication',             category: 'Barrication',   img: g + 'road-safety-barrication.jpg' },
+  { title: 'Construction Site Barricade',         category: 'Barrication',   img: g + 'construction-site-barricade.jpg' },
+  { title: 'Custom Fabrication Work',             category: 'MS Steel',      img: g + 'custom-fabrication-work.jpg' },
+  { title: 'On-Site Installation',                category: 'Miscellaneous', img: g + 'on-site-installation.jpg' },
 ]
 
 const tabs = ['All Works', 'Aluminium', 'Cladding', 'Patch Fitting', 'Gates', 'Roofing', 'Barrication', 'MS Steel', 'Miscellaneous']

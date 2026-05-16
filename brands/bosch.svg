@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150">
+    <g transform="translate(20, 25)">
+        <!-- Outer ring -->
+        <circle cx="50" cy="50" r="46" fill="none" stroke="#53565A" stroke-width="6" />
+        
+        <!-- Left inner armature piece -->
+        <path d="M 32 18 L 32 82 A 37 37 0 0 1 32 18 Z" fill="none" stroke="#53565A" stroke-width="5.5" stroke-linejoin="miter" />
+        
+        <!-- Right inner armature piece -->
+        <path d="M 68 18 L 68 82 A 37 37 0 0 0 68 18 Z" fill="none" stroke="#53565A" stroke-width="5.5" stroke-linejoin="miter" />
+        
+        <!-- Horizontal connecting line -->
+        <line x1="32" y1="50" x2="68" y2="50" stroke="#53565A" stroke-width="5.5" />
+    </g>
+    <text x="140" y="112" font-family="'Arial Black', 'Impact', sans-serif" font-weight="900" font-size="95" fill="#E20015" letter-spacing="1">BOSCH</text>
+</svg>

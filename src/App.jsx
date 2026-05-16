@@ -8,6 +8,8 @@ import ServicesIndexPage from './pages/ServicesIndexPage'
 import ServicePage from './pages/ServicePage'
 import ProjectsPage from './pages/ProjectsPage'
 import IndustriesPage from './pages/IndustriesPage'
+import TrustedBrandsPage from './pages/TrustedBrandsPage'
+import WhyUsPage from './pages/WhyUsPage'
 import TestimonialsPage from './pages/TestimonialsPage'
 import ContactPage from './pages/ContactPage'
 import BlogPage from './pages/BlogPage'
@@ -24,6 +26,8 @@ export default function App() {
           <Route path="/services/:slug" element={<ServicePage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/industries" element={<IndustriesPage />} />
+          <Route path="/trusted-brands" element={<TrustedBrandsPage />} />
+          <Route path="/why-us" element={<WhyUsPage />} />
           <Route path="/testimonials" element={<TestimonialsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/blog" element={<BlogPage />} />

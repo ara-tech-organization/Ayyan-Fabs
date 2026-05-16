@@ -11,10 +11,8 @@ export default function ContactHero() {
           <ChevronRight size={14} />
           <span>Contact</span>
         </nav>
-        <h1 className="contact-hero__title">
-          Contact Lounge<br />
-          <span style={{ fontSize: '0.65em', fontWeight: 400 }}>Experience World-Class Consulting</span>
-        </h1>
+        <p className="page-hero__tagline">Connect With Excellence</p>
+        <h1 className="contact-hero__title">Contact Lounge</h1>
         <p className="contact-hero__sub">
           Experience world-class fabrication consulting in our digital lounge. Let's build your vision into reality.
         </p>

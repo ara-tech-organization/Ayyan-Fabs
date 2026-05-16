@@ -5,14 +5,12 @@ import {
 } from 'lucide-react'
 
 const serviceOptions = [
-  'Aluminium Fabrication',
+  'Premium Aluminium Fabrication',
+  'Modern Glass Solutions',
+  'Sliding & Folding Systems',
   'ACP Cladding Works',
-  'Patch Fitting & Frameless Glass',
-  'Custom Metal Gates',
-  'Industrial & Commercial Roofing',
-  'Site Barricading',
-  'MS Steel Fabrication',
-  'Custom & Miscellaneous Works',
+  'Custom Interior Works',
+  'Structural Fabrication',
 ]
 
 const empty = { name: '', company: '', phone: '', email: '', service: '', location: '', description: '', visitDate: '' }

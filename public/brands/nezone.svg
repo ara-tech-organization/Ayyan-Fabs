@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200">
+    <!-- Blue oval border -->
+    <ellipse cx="250" cy="100" rx="230" ry="80" fill="none" stroke="#006BB6" stroke-width="8" />
+    
+    <!-- NEZONE Text -->
+    <text x="250" y="130" text-anchor="middle" font-family="'Arial Black', 'Impact', sans-serif" font-weight="900" font-size="85" fill="#006BB6" letter-spacing="4">NEZONE</text>
+    
+    <!-- Connecting top line -->
+    <line x1="120" y1="68" x2="380" y2="68" stroke="#006BB6" stroke-width="8" />
+</svg>

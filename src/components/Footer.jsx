@@ -119,7 +119,7 @@ export default function Footer() {
                 <Link to="/services" className="footer__nav-link"><ChevronRight size={14} />Services</Link>
               </li>
               <li>
-                <Link to="/industries" className="footer__nav-link"><ChevronRight size={14} />Trusted Brands</Link>
+                <Link to="/trusted-brands" className="footer__nav-link"><ChevronRight size={14} />Trusted Brands</Link>
               </li>
               <li>
                 <Link to="/contact" className="footer__nav-link"><ChevronRight size={14} />Contact</Link>

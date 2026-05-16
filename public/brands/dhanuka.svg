@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 200">
+    <defs>
+        <linearGradient id="dGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#e8f6f8" />
+            <stop offset="40%" stop-color="#9dcce1" />
+            <stop offset="100%" stop-color="#0a468c" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Abstract swoosh / off-center ring -->
+    <path d="M 100 20 A 80 80 0 1 1 20 100 A 80 80 0 0 1 100 20 Z M 80 40 A 45 45 0 1 0 80 130 A 45 45 0 1 0 80 40 Z" fill="url(#dGrad)" fill-rule="evenodd" />
+    
+    <text x="210" y="95" font-family="'Impact', 'Arial Black', sans-serif" font-size="75" fill="#13103c" letter-spacing="4">DHANUKA</text>
+    <text x="215" y="165" font-family="'Impact', 'Arial Black', sans-serif" font-size="60" fill="none" stroke="#13103c" stroke-width="3" letter-spacing="8">GROUP</text>
+</svg>

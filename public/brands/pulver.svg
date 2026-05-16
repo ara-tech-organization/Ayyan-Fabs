@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+    <!-- Pulver text with custom rounded look -->
+    <text x="250" y="100" text-anchor="middle" font-family="'Arial Rounded MT Bold', 'Arial', sans-serif" font-weight="900" font-size="90" fill="#000000" letter-spacing="-1">pulver</text>
+    
+    <!-- Pink dot matrix N shape -->
+    <g fill="#E6007E">
+        <!-- Col 1 -->
+        <circle cx="180" cy="130" r="4" />
+        <circle cx="180" cy="150" r="5" />
+        <circle cx="180" cy="170" r="6" />
+        <circle cx="180" cy="190" r="5" />
+        <circle cx="180" cy="210" r="4" />
+        
+        <!-- Col 2 -->
+        <circle cx="210" cy="120" r="8" />
+        <circle cx="210" cy="145" r="10" />
+        <circle cx="210" cy="175" r="12" />
+        <circle cx="210" cy="205" r="10" />
+        <circle cx="210" cy="230" r="8" />
+        
+        <!-- Col 3 (Diagonal slope) -->
+        <circle cx="240" cy="135" r="12" />
+        <circle cx="240" cy="165" r="14" />
+        <circle cx="240" cy="195" r="12" />
+        <circle cx="240" cy="220" r="10" />
+        
+        <!-- Col 4 -->
+        <circle cx="270" cy="140" r="10" />
+        <circle cx="270" cy="170" r="12" />
+        <circle cx="270" cy="200" r="10" />
+        <circle cx="270" cy="230" r="8" />
+        
+        <!-- Col 5 -->
+        <circle cx="300" cy="130" r="8" />
+        <circle cx="300" cy="160" r="8" />
+        <circle cx="300" cy="190" r="8" />
+        <circle cx="300" cy="220" r="6" />
+    </g>
+</svg>

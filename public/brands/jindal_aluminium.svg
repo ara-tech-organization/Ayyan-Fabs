@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 250">
+    <!-- Outer thin ring -->
+    <ellipse cx="250" cy="100" rx="180" ry="70" fill="none" stroke="#cccccc" stroke-width="4" />
+    <!-- Inner thick ring -->
+    <path d="M 90 100 A 160 55 0 1 0 410 100 A 160 55 0 1 0 90 100 Z" fill="none" stroke="#888888" stroke-width="18" />
+    
+    <!-- Cutouts to make it look like two arrows/swooshes forming an oval -->
+    <polygon points="230,10 270,10 270,50 230,50" fill="#ffffff" />
+    <polygon points="230,150 270,150 270,190 230,190" fill="#ffffff" />
+
+    <!-- JINDAL Text -->
+    <text x="250" y="125" text-anchor="middle" font-family="'Arial Black', 'Impact', sans-serif" font-weight="900" font-size="75" font-style="italic" fill="#666666" letter-spacing="4">JINDAL</text>
+    
+    <!-- Jindal Aluminium Text -->
+    <text x="250" y="230" text-anchor="middle" font-family="'Arial', sans-serif" font-size="35" font-weight="600" fill="#777777">Jindal Aluminium</text>
+</svg>

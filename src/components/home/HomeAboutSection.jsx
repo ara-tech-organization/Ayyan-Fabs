@@ -1,13 +1,13 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { CheckCircle, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import aboutOverview from '../../assets/about-overview.jpg'
 
-const highlights = [
-  { title: 'ISI-Grade Materials', desc: 'Only branded, certified aluminium sections and hardware used in every project.' },
-  { title: 'Expert Team', desc: 'Skilled fabricators, designers, and installers with 21+ years of field experience.' },
-  { title: 'On-Time Delivery', desc: 'We commit to deadlines and deliver every project on schedule, always.' },
-  { title: 'After-Sales Support', desc: 'Dedicated warranty service and post-installation support for complete peace of mind.' },
+const features = [
+  { num: '01', title: 'ISI-Grade Materials', desc: 'Certified aluminium sections and hardware on every project.' },
+  { num: '02', title: 'Expert Team', desc: '21+ years of skilled fabricators, designers, and installers.' },
+  { num: '03', title: 'On-Time Delivery', desc: 'We commit to deadlines and always deliver on schedule.' },
+  { num: '04', title: 'After-Sales Support', desc: 'Warranty service and post-installation support included.' },
 ]
 
 export default function HomeAboutSection() {
@@ -31,49 +31,9 @@ export default function HomeAboutSection() {
       <div className="container">
         <div className="home-about__grid">
 
-          <div className="home-about__left reveal-left">
-            <span className="section-label">About Us</span>
-            <h2 className="section-heading">
-              Building the Future,<br />One Frame at a Time
-            </h2>
-            <p className="home-about__para">
-              Sri Ayyan Fabs is a trusted name in aluminium fabrication, glass works, and custom architectural
-              solutions based in Bangalore. With over 21 years of hands-on experience, we have delivered
-              500+ premium projects — from luxury residences to large commercial complexes.
-            </p>
-            <p className="home-about__para">
-              We combine cutting-edge materials, modern design principles, and skilled craftsmanship to deliver
-              structures that are not just beautiful — but engineered to last.
-            </p>
-
-            <ul className="home-about__highlights">
-              {highlights.map((h, i) => (
-                <li key={i} className={`home-about__highlight reveal delay-${i + 1}`}>
-                  <div className="home-about__check">
-                    <CheckCircle size={16} strokeWidth={2.5} />
-                  </div>
-                  <div className="home-about__highlight-text">
-                    <strong>{h.title}</strong>
-                    <span>{h.desc}</span>
-                  </div>
-                </li>
-              ))}
-            </ul>
-
-            <div className="home-about__actions reveal">
-              <Link to="/about" className="btn-primary">
-                Explore Our Story
-                <ArrowRight size={16} />
-              </Link>
-              <Link to="/contact" className="home-about__quote-btn">
-                Get a Quote
-                <ArrowRight size={15} />
-              </Link>
-            </div>
-          </div>
-
           <div className="home-about__right reveal-right">
             <div className="home-about__img-wrap">
+              <div className="home-about__img-frame" aria-hidden="true" />
               <img
                 src={aboutOverview}
                 alt="Sri Ayyan Fabs workshop"
@@ -84,10 +44,41 @@ export default function HomeAboutSection() {
                 <span className="home-about__badge-num">21+</span>
                 <span className="home-about__badge-label">Years of Excellence</span>
               </div>
-              <div className="home-about__badge2">
-                <span className="home-about__badge2-num">500+</span>
-                <span className="home-about__badge2-label">Projects Delivered</span>
-              </div>
+            </div>
+          </div>
+
+          <div className="home-about__left reveal-left">
+            <span className="section-label">About Us</span>
+            <h2 className="home-about__heading">
+              Building the Future,<br />
+              <span className="home-about__heading-accent">One Frame at a Time</span>
+            </h2>
+            <p className="home-about__para">
+              Sri Ayyan Fabs is a trusted name in aluminium fabrication, glass works, and custom architectural
+              solutions based in Bangalore — delivering 1,000+ premium projects over 21+ years.
+            </p>
+
+            <div className="home-about__features">
+              {features.map((f, i) => (
+                <div key={i} className={`home-about__feature reveal delay-${i + 1}`}>
+                  <span className="home-about__feature-num">{f.num}</span>
+                  <div className="home-about__feature-text">
+                    <strong>{f.title}</strong>
+                    <span>{f.desc}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="home-about__actions reveal">
+              <Link to="/about" className="btn-primary">
+                Explore Our Story
+                <ArrowRight size={15} />
+              </Link>
+              <Link to="/contact" className="home-about__quote-btn">
+                Get a Quote
+                <ArrowRight size={14} />
+              </Link>
             </div>
           </div>
 

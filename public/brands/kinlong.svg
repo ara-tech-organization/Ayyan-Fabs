@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+    <defs>
+        <path id="topCurve" d="M 50,200 A 150,150 0 0,1 350,200" />
+        <path id="bottomCurve" d="M 345,200 A 145,145 0 0,1 55,200" />
+    </defs>
+    
+    <!-- Outer blue rings -->
+    <circle cx="200" cy="200" r="185" fill="#004D95" stroke="#ffffff" stroke-width="4" />
+    <circle cx="200" cy="200" r="195" fill="none" stroke="#004D95" stroke-width="4" />
+    
+    <!-- Inner white circle -->
+    <circle cx="200" cy="200" r="130" fill="#ffffff" />
+    <circle cx="200" cy="200" r="133" fill="none" stroke="#ffffff" stroke-width="2" />
+    
+    <!-- Circular text -->
+    <text font-family="'Arial', sans-serif" font-weight="bold" font-size="18" fill="#ffffff" letter-spacing="1">
+        <textPath href="#topCurve" startOffset="50%" text-anchor="middle">KINLONG HARDWARE (INDIA) PVT LTD</textPath>
+    </text>
+    <text font-family="'Arial', sans-serif" font-weight="bold" font-size="20" fill="#ffffff" letter-spacing="2">
+        <textPath href="#bottomCurve" startOffset="50%" text-anchor="middle">* MUMBAI * BANGALORE * DELHI *</textPath>
+    </text>
+
+    <!-- Center text -->
+    <text x="200" y="195" text-anchor="middle" font-family="'Arial Black', 'Impact', sans-serif" font-weight="900" font-size="52" fill="#004D95" letter-spacing="-1">KIN LONG</text>
+    <text x="200" y="240" text-anchor="middle" font-family="'Times New Roman', 'Georgia', serif" font-size="26" font-weight="bold" font-style="italic" fill="#111111">For Better Living</text>
+</svg>

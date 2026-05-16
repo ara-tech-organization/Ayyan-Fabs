@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 250">
+    <g transform="translate(0, 30)">
+        <!-- The main text -->
+        <text x="240" y="130" text-anchor="middle" font-family="'Arial Black', 'Impact', sans-serif" font-weight="900" font-size="120" fill="#222222" letter-spacing="-4">vitco</text>
+        
+        <!-- Red dot covering the 'i' dot -->
+        <circle cx="155" cy="42" r="16" fill="#E31837" />
+        
+        <!-- TM symbol -->
+        <text x="390" y="55" font-family="'Arial', sans-serif" font-size="22" font-weight="bold" fill="#222222">TM</text>
+        
+        <!-- Subtitle -->
+        <text x="245" y="180" text-anchor="middle" font-family="'Arial', 'Helvetica', sans-serif" font-size="26" font-weight="600" fill="#111111" letter-spacing="1">door &amp; window system</text>
+    </g>
+</svg>

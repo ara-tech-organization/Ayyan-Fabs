@@ -94,7 +94,6 @@ export default function HomeLocationSection() {
             Instant WhatsApp Consulting
             <ArrowUpRight size={16} />
           </a>
-          <span className="home-location__online">● Consultants Online Now</span>
         </div>
       </div>
     </section>

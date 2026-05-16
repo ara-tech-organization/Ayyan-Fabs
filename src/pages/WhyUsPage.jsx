@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { ChevronRight, ShieldCheck, Clock, Crosshair, BadgeDollarSign, Truck, Leaf, HeartHandshake, CheckCircle2 } from 'lucide-react'
 import heroBg from '../assets/h1.png'
+import commitmentImg from '../assets/about-overview.jpg'
 
 const features = [
   {
@@ -47,11 +48,6 @@ const commitmentPoints = [
   'IS-Certified Structural Materials',
 ]
 
-const stats = [
-  { num: '21+', label: 'Years Experience' },
-  { num: '500+', label: 'Projects Delivered' },
-  { num: '100%', label: 'Quality Assured' },
-]
 
 export default function WhyUsPage() {
   const sectionsRef = useRef([])
@@ -140,16 +136,13 @@ export default function WhyUsPage() {
               <Link to="/contact" className="btn-primary">Start Your Project</Link>
             </div>
 
-            <div className="why-commitment__panel reveal-right">
-              {stats.map((s, i) => (
-                <div key={i} className="why-stat">
-                  <span className="why-stat__num">{s.num}</span>
-                  <span className="why-stat__label">{s.label}</span>
-                </div>
-              ))}
-              <div className="why-commitment__tagline">
-                Precision · Quality · Trust
-              </div>
+            <div className="why-commitment__img-wrap reveal-right">
+              <div className="why-commitment__img-frame" aria-hidden="true" />
+              <img
+                src={commitmentImg}
+                alt="Sri Ayyan Fabs workshop"
+                className="why-commitment__img"
+              />
             </div>
 
           </div>

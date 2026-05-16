@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { ChevronRight, ShieldCheck, Clock, Crosshair, BadgeDollarSign, Truck, Leaf, HeartHandshake, CheckCircle2 } from 'lucide-react'
 import heroBg from '../assets/h1.png'
+import commitmentImg from '../assets/Whyus.png'
 
 const features = [
   {
@@ -116,21 +117,44 @@ export default function WhyUsPage() {
       {/* Commitment */}
       <section className="why-commitment" ref={addRef}>
         <div className="container">
-          <div className="why-commitment__content reveal">
-            <span className="section-label">Our Promise</span>
-            <h2 className="why-commitment__heading">Our Commitment</h2>
-            <p className="why-commitment__body">
-              At Sri Ayyan Fabs, we are committed to providing the highest quality of service and products to our clients. Our team of experienced professionals works closely with you to ensure your project is completed to your satisfaction.
-            </p>
-            <ul className="why-commitment__list">
-              {commitmentPoints.map((pt, i) => (
-                <li key={i} className="why-commitment__item">
-                  <CheckCircle2 size={18} strokeWidth={2.2} />
-                  <span>{pt}</span>
-                </li>
-              ))}
-            </ul>
-            <Link to="/contact" className="btn-primary">Start Your Project</Link>
+          <div className="why-commitment__layout">
+
+            <div className="why-commitment__content reveal-left">
+              <span className="section-label">Our Promise</span>
+              <h2 className="why-commitment__heading">Our Commitment</h2>
+              <p className="why-commitment__body">
+                At Sri Ayyan Fabs, we are committed to providing the highest quality of service and products to our clients. Our team of experienced professionals works closely with you to ensure your project is completed to your satisfaction.
+              </p>
+              <ul className="why-commitment__list">
+                {commitmentPoints.map((pt, i) => (
+                  <li key={i} className="why-commitment__item">
+                    <CheckCircle2 size={18} strokeWidth={2.2} />
+                    <span>{pt}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link to="/contact" className="btn-primary">Start Your Project</Link>
+            </div>
+
+            <div className="why-commitment__img-wrap reveal-right">
+              <img
+                src={commitmentImg}
+                alt="Sri Ayyan Fabs workshop"
+                className="why-commitment__img"
+              />
+              <div className="why-commitment__badge">
+                <div className="why-commitment__badge-item">
+                  <span className="why-commitment__badge-num">21+</span>
+                  <span className="why-commitment__badge-label">Years of Excellence</span>
+                </div>
+                <div className="why-commitment__badge-divider" />
+                <div className="why-commitment__badge-item">
+                  <span className="why-commitment__badge-num">500+</span>
+                  <span className="why-commitment__badge-label">Projects Delivered</span>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>

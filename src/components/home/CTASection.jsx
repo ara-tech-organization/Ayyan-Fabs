@@ -34,9 +34,9 @@ export default function CTASection() {
           </p>
         </div>
         <div className="cta-actions reveal delay-2">
-          <a href="tel:+918904038295" className="cta-btn-primary">
-            <Phone size={18} />
-            Call +91 8904038295
+          <a href="tel:+918904038295" className="cta-btn-secondary">
+            <Phone size={22} />
+            +91 8904038295
           </a>
           <a
             href="https://wa.me/918904038295?text=Hi%20Sri%20Ayyan%20Fabs%2C%20I%27m%20interested%20in%20your%20services."

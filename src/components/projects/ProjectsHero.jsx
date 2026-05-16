@@ -13,7 +13,7 @@ export default function ProjectsHero() {
         </nav>
         <h1 className="page-hero__title">Our Projects</h1>
         <p className="page-hero__sub">
-          A showcase of fabrication work delivered across Bangalore — commercial, industrial, and residential.
+          Showcasing Masterpieces in Aluminium &amp; Glass — Legacy Roadmap fabricating dreams since 2008.
         </p>
       </div>
     </section>

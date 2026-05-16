@@ -1,8 +1,6 @@
 import { useEffect, useRef } from 'react'
 import AboutHero from '../components/about/AboutHero'
 import AboutStory from '../components/about/AboutStory'
-import AboutValues from '../components/about/AboutValues'
-import AboutWhy from '../components/about/AboutWhy'
 
 export default function AboutPage() {
   const sectionsRef = useRef([])
@@ -11,7 +9,7 @@ export default function AboutPage() {
     window.scrollTo(0, 0)
     document.title = 'About Sri Ayyan Fabs | Precision Fabrication, Bangalore'
     const meta = document.querySelector('meta[name="description"]')
-    if (meta) meta.setAttribute('content', "Learn about Sri Ayyan Fabs — Bangalore's precision fabrication specialists. In-house engineering, own workshop, 1000+ projects delivered.")
+    if (meta) meta.setAttribute('content', "Learn about Sri Ayyan Fabs — Bangalore's precision fabrication specialists. In-house engineering, own workshop, 500+ projects delivered.")
 
     const observer = new IntersectionObserver(
       entries => {
@@ -33,8 +31,6 @@ export default function AboutPage() {
     <>
       <AboutHero />
       <AboutStory addRef={addRef} />
-      <AboutValues addRef={addRef} />
-      <AboutWhy addRef={addRef} />
     </>
   )
 }

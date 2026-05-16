@@ -1,7 +1,15 @@
 export const companyStory = [
-  'Sri Ayyan Fabs is a leading aluminium fabrication company based in Bangalore, specializing in premium-quality aluminium windows, doors, glass partitions, ACP cladding, sliding systems, structural steelwork, and custom interior solutions.',
-  'With a state-of-the-art fabrication unit equipped with in-house powder coating facilities, we are recognized as one of the premier fabrication houses in India. Our presence spans across private, public, and government sectors — delivering robust engineering support and exceptional craftsmanship for residential, commercial, and industrial projects.',
-  'From design consultation to final installation, we ensure precision, durability, and a modern aesthetic in every project we undertake. With over 21 years of hands-on experience, we have delivered 500+ premium projects — from luxury residences to large commercial complexes.',
+  'Sri Ayyan Fabs is a leading aluminium fabrication company based in Bangalore, specializing in premium-quality aluminium windows, doors, glass partitions, ACP cladding, sliding systems, structural steelwork, and custom interior solutions. With a state-of-the-art fabrication unit equipped with in-house powder coating facilities, we are recognized as one of the premier fabrication houses in India.',
+  'Our presence spans across private, public, and government sectors — delivering robust engineering support and exceptional craftsmanship for residential, commercial, and industrial projects. From design consultation to final installation, we ensure precision, durability, and a modern aesthetic in every project we undertake.',
+]
+
+export const coreStrengths = [
+  'Premium Quality Materials',
+  'Custom Design Solutions',
+  'Expert Fabrication Team',
+  'Timely Project Delivery',
+  'Professional Installation',
+  'Durable & Long-lasting',
 ]
 
 export const mission = 'To deliver fabrication solutions that are structurally sound, aesthetically refined, and economically efficient — making quality metalwork accessible to every project, regardless of scale.'

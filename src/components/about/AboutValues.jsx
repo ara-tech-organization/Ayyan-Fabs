@@ -20,17 +20,18 @@ export default function AboutValues({ addRef }) {
             The principles that guide every project we take on.
           </p>
         </div>
-        <div className="about-values__grid">
+
+        {/* Horizontal icon strip */}
+        <div className="about-values__strip">
           {values.map((v, i) => {
             const Icon = iconMap[v.icon] || Award
             return (
-              <div key={i} className={`about-value-card reveal-scale delay-${i + 1}`}>
-                <div className="about-value-card__num">0{i + 1}</div>
-                <div className="about-value-card__icon">
-                  <Icon size={24} strokeWidth={1.8} />
+              <div key={i} className={`about-value-item reveal-scale delay-${(i % 3) + 1}`}>
+                <div className="about-value-item__icon">
+                  <Icon size={26} strokeWidth={1.6} />
                 </div>
-                <h3 className="about-value-card__title">{v.title}</h3>
-                <p className="about-value-card__desc">{v.desc}</p>
+                <h3 className="about-value-item__title">{v.title}</h3>
+                <p className="about-value-item__desc">{v.desc}</p>
               </div>
             )
           })}

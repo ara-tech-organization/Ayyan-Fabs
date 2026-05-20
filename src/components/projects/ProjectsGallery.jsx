@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { X, ChevronLeft, ChevronRight, MapPin, Tag, Calendar, Images, CheckCircle } from 'lucide-react'
+import { X, ChevronLeft, ChevronRight, MapPin, Tag, Calendar, Images, CheckCircle, ArrowUpRight } from 'lucide-react'
 import { projectsByYear, allYears, categoryColors } from '../../data/projectsData'
 
 const ALL = 'All'
@@ -35,55 +35,35 @@ function ProjectModal({ project, onClose, onPrev, onNext }) {
           <button className="proj-modal__close" onClick={onClose} aria-label="Close">
             <X size={18} />
           </button>
-
           <div className="proj-modal__meta">
-            {project.logo && (
-              <img src={project.logo} alt="" className="proj-modal__client-logo" />
-            )}
+            {project.logo && <img src={project.logo} alt="" className="proj-modal__client-logo" />}
             <span className="proj-modal__status">
               <CheckCircle size={13} />
-              Completed Project — {project.year}
+              Completed — {project.year}
             </span>
           </div>
-
           <div className="proj-modal__tags">
             <CategoryBadge category={project.category} />
-            <span className="proj-modal__year">
-              <Calendar size={12} />
-              {project.year}
-            </span>
-            <span className="proj-modal__photos">
-              <Images size={12} />
-              {project.photos} {project.photos === 1 ? 'Photo' : 'Photos'}
-            </span>
+            <span className="proj-modal__year"><Calendar size={12} />{project.year}</span>
+            <span className="proj-modal__photos"><Images size={12} />{project.photos} {project.photos === 1 ? 'Photo' : 'Photos'}</span>
           </div>
-
           <h2 className="proj-modal__title">{project.name}</h2>
           <p className="proj-modal__desc">{project.desc}</p>
-
           {project.captions && (
             <div className="proj-modal__captions">
               <span className="proj-modal__captions-label">View Highlights</span>
               <div className="proj-modal__captions-grid">
-                {project.captions.map((cap, i) => (
-                  <span key={i} className="proj-modal__caption-tag">{cap}</span>
-                ))}
+                {project.captions.map((cap, i) => <span key={i} className="proj-modal__caption-tag">{cap}</span>)}
               </div>
             </div>
           )}
-
           <div className="proj-modal__footer">
             <span className="proj-modal__loc"><MapPin size={13} />Bangalore, Karnataka</span>
             <span className="proj-modal__fab"><Tag size={13} />Sri Ayyan Fabs · GSTIN 29AIYPR5034K1ZC</span>
           </div>
-
           <div className="proj-modal__nav-row">
-            <button className="proj-modal__nav-btn" onClick={onPrev} aria-label="Previous project">
-              <ChevronLeft size={16} /> Prev
-            </button>
-            <button className="proj-modal__nav-btn" onClick={onNext} aria-label="Next project">
-              Next <ChevronRight size={16} />
-            </button>
+            <button className="proj-modal__nav-btn" onClick={onPrev}><ChevronLeft size={16} /> Prev</button>
+            <button className="proj-modal__nav-btn" onClick={onNext}>Next <ChevronRight size={16} /></button>
           </div>
         </div>
       </div>
@@ -98,13 +78,10 @@ export default function ProjectsGallery() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'))
-          }
-        })
-      },
+      entries => entries.forEach(entry => {
+        if (entry.isIntersecting)
+          entry.target.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'))
+      }),
       { threshold: 0.04 }
     )
     if (sectionRef.current) observer.observe(sectionRef.current)
@@ -115,26 +92,22 @@ export default function ProjectsGallery() {
     ? projectsByYear
     : projectsByYear.filter(y => y.year === activeYear)
 
-  const flatProjects = filtered.flatMap(y =>
-    y.projects.map(p => ({ ...p, year: y.year }))
-  )
-
-  const allFlat = projectsByYear.flatMap(y =>
-    y.projects.map(p => ({ ...p, year: y.year }))
-  )
-
+  const flatProjects = filtered.flatMap(y => y.projects.map(p => ({ ...p, year: y.year })))
+  const allFlat = projectsByYear.flatMap(y => y.projects.map(p => ({ ...p, year: y.year })))
   const totalProjects = allFlat.length
 
   const prevModal = () => setModal(m => ({ ...m, idx: (m.idx - 1 + flatProjects.length) % flatProjects.length }))
   const nextModal = () => setModal(m => ({ ...m, idx: (m.idx + 1) % flatProjects.length }))
 
+  const seenLogos = new Set()
+
   return (
     <>
-      <section className="proj-logo-section" ref={sectionRef} style={{ background: '#f8fafc' }}>
+      <section className="proj-premium-section" ref={sectionRef}>
         <div className="container">
 
           {/* Header */}
-          <div className="proj-logo__header reveal">
+          <div className="proj-premium__header reveal">
             <span className="section-label">Legacy Roadmap</span>
             <h2 className="section-heading">Fabricating Dreams Since 2008</h2>
             <p className="section-sub" style={{ margin: '0 auto' }}>
@@ -157,34 +130,47 @@ export default function ProjectsGallery() {
             ))}
           </div>
 
-          {/* Logo grid */}
-          <div className="proj-logo-grid">
-            {(() => {
-              const seenLogos = new Set()
-              return flatProjects.map((project, i) => {
-                const logoUsed = project.logo && !seenLogos.has(project.logo)
-                if (project.logo) seenLogos.add(project.logo)
-                return (
-                  <button
-                    key={`${project.year}-${i}`}
-                    className="proj-logo-card"
-                    onClick={() => setModal({ idx: i })}
-                    aria-label={`View ${project.name}`}
-                  >
-                    <div className={`proj-logo-card__box${logoUsed ? '' : ' proj-logo-card__box--text'}`}>
-                      {logoUsed
-                        ? <img src={project.logo} alt={project.name} className="proj-logo-card__img" />
-                        : <span className="proj-logo-card__text">{project.name}</span>
-                      }
+          {/* Premium card grid */}
+          <div className="proj-premium-grid reveal">
+            {flatProjects.map((project, i) => {
+              const showLogo = project.logo && !seenLogos.has(project.logo)
+              if (project.logo) seenLogos.add(project.logo)
+              const catStyle = categoryColors[project.category] || { bg: 'rgba(100,116,139,0.1)', color: '#64748b' }
+              return (
+                <button
+                  key={`${project.year}-${i}`}
+                  className="proj-pcard"
+                  onClick={() => setModal({ idx: i })}
+                  aria-label={`View ${project.name}`}
+                  style={{ '--cat-color': catStyle.color }}
+                >
+                  {/* Logo / brand area */}
+                  <div className="proj-pcard__logo-area">
+                    {showLogo
+                      ? <img src={project.logo} alt={project.name} className="proj-pcard__logo-img" />
+                      : <span className="proj-pcard__brand-name">{project.name}</span>
+                    }
+                  </div>
+
+                  {/* Card body */}
+                  <div className="proj-pcard__body">
+                    <div className="proj-pcard__top">
+                      <span className="proj-pcard__cat" style={{ background: catStyle.bg, color: catStyle.color }}>
+                        {project.category}
+                      </span>
+                      <ArrowUpRight size={14} className="proj-pcard__arrow" />
                     </div>
-                    <div className="proj-logo-card__info">
-                      <span className="proj-logo-card__name">{project.name}</span>
-                      <span className="proj-logo-card__year">{project.year}</span>
+                    <h3 className="proj-pcard__name">{project.name}</h3>
+                    <div className="proj-pcard__meta">
+                      <span className="proj-pcard__year">{project.year}</span>
+                      {project.photos > 0 && (
+                        <span className="proj-pcard__photos">{project.photos} Photos</span>
+                      )}
                     </div>
-                  </button>
-                )
-              })
-            })()}
+                  </div>
+                </button>
+              )
+            })}
           </div>
 
         </div>

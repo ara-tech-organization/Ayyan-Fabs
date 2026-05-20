@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { ChevronRight, Shield } from 'lucide-react'
 import { brandCategories } from '../data/brandsData'
-import heroBg from '../assets/h2.png'
+import heroBg from '../assets/trusted-brands-bg.png'
 
 export default function TrustedBrandsPage() {
   useEffect(() => {
@@ -53,16 +53,33 @@ export default function TrustedBrandsPage() {
                 <span className="tb-category__num">{String(i + 1).padStart(2, '0')}</span>
                 <h3 className="tb-category__label">{cat.category}</h3>
               </div>
-              <div className="tb-marquee-wrap">
-                <div className="tb-marquee">
-                  {(() => { const min = Math.ceil(8 / cat.brands.length); const arr = Array.from({ length: min * 2 }, (_, i) => cat.brands[i % cat.brands.length]); return arr })().map((brand, j) => (
-                    <div key={j} className="tb-logo-card">
-                      <img src={brand.logo} alt={brand.name} loading="lazy" />
-                      <span className="tb-logo-card__name">{brand.name}</span>
-                    </div>
-                  ))}
+              {cat.brands.length === 1 ? (
+                <div className="tb-marquee-wrap tb-marquee-wrap--static">
+                  <div className="tb-marquee tb-marquee--static">
+                    {cat.brands.map((brand, j) => (
+                      <div key={j} className="tb-logo-card">
+                        <img src={brand.logo} alt={brand.name} loading="lazy" />
+                        <span className="tb-logo-card__name">{brand.name}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <div className="tb-marquee-wrap">
+                  <div className="tb-marquee">
+                    {(() => {
+                      const copies = Math.ceil(12 / cat.brands.length)
+                      const half = Array.from({ length: copies * cat.brands.length }, (_, i) => cat.brands[i % cat.brands.length])
+                      return [...half, ...half]
+                    })().map((brand, j) => (
+                      <div key={j} className="tb-logo-card">
+                        <img src={brand.logo} alt={brand.name} loading="lazy" />
+                        <span className="tb-logo-card__name">{brand.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>

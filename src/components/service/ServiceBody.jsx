@@ -13,11 +13,11 @@ const showcaseImgMap = {
     g + 'aluminium-window-frame-installation.jpg',
   ],
   'glass-solutions':        [
-    g + 'glass-door-patch-fitting.jpg',
     g + 'frameless-glass-installation.jpg',
     g + 'glass-door-patch-fitting.jpg',
-    g + 'frameless-glass-installation.jpg',
-    g + 'glass-door-patch-fitting.jpg',
+    g + 'p1.jpg',
+    g + 'p2.jpg',
+    g + 'p3.jpg',
   ],
   'sliding-folding-systems':[
     g + 'modern-ms-gate-design.jpg',

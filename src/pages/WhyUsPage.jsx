@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { ChevronRight, ShieldCheck, Clock, Crosshair, BadgeDollarSign, Truck, Leaf, HeartHandshake, CheckCircle2 } from 'lucide-react'
-import heroBg from '../assets/h1.png'
+import heroBg from '../assets/page-hero1.jpg'
 import commitmentImg from '../assets/Whyus.png'
 
 const features = [

@@ -30,26 +30,16 @@ function ProjectModal({ project, onClose, onPrev, onNext }) {
 
   return (
     <div className="proj-modal-overlay" onClick={onClose}>
-      <div className="proj-modal" onClick={e => e.stopPropagation()}>
-
-        <div className="proj-modal__img-wrap">
-          <img src={project.img} alt={project.name} className="proj-modal__img" />
-          <div className="proj-modal__img-nav">
-            <button className="proj-modal__nav-btn" onClick={onPrev} aria-label="Previous project">
-              <ChevronLeft size={20} />
-            </button>
-            <button className="proj-modal__nav-btn" onClick={onNext} aria-label="Next project">
-              <ChevronRight size={20} />
-            </button>
-          </div>
-        </div>
-
+      <div className="proj-modal proj-modal--text" onClick={e => e.stopPropagation()}>
         <div className="proj-modal__body">
           <button className="proj-modal__close" onClick={onClose} aria-label="Close">
             <X size={18} />
           </button>
 
           <div className="proj-modal__meta">
+            {project.logo && (
+              <img src={project.logo} alt="" className="proj-modal__client-logo" />
+            )}
             <span className="proj-modal__status">
               <CheckCircle size={13} />
               Completed Project — {project.year}
@@ -86,6 +76,15 @@ function ProjectModal({ project, onClose, onPrev, onNext }) {
             <span className="proj-modal__loc"><MapPin size={13} />Bangalore, Karnataka</span>
             <span className="proj-modal__fab"><Tag size={13} />Sri Ayyan Fabs · GSTIN 29AIYPR5034K1ZC</span>
           </div>
+
+          <div className="proj-modal__nav-row">
+            <button className="proj-modal__nav-btn" onClick={onPrev} aria-label="Previous project">
+              <ChevronLeft size={16} /> Prev
+            </button>
+            <button className="proj-modal__nav-btn" onClick={onNext} aria-label="Next project">
+              Next <ChevronRight size={16} />
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -102,7 +101,7 @@ export default function ProjectsGallery() {
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.reveal, .proj-masonry__item').forEach(el => el.classList.add('visible'))
+            entry.target.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'))
           }
         })
       },
@@ -112,12 +111,6 @@ export default function ProjectsGallery() {
     return () => observer.disconnect()
   }, [])
 
-  useEffect(() => {
-    if (sectionRef.current) {
-      sectionRef.current.querySelectorAll('.reveal, .proj-masonry__item').forEach(el => el.classList.add('visible'))
-    }
-  }, [activeYear])
-
   const filtered = activeYear === ALL
     ? projectsByYear
     : projectsByYear.filter(y => y.year === activeYear)
@@ -126,18 +119,22 @@ export default function ProjectsGallery() {
     y.projects.map(p => ({ ...p, year: y.year }))
   )
 
-  const totalProjects = projectsByYear.reduce((acc, y) => acc + y.projects.length, 0)
+  const allFlat = projectsByYear.flatMap(y =>
+    y.projects.map(p => ({ ...p, year: y.year }))
+  )
+
+  const totalProjects = allFlat.length
 
   const prevModal = () => setModal(m => ({ ...m, idx: (m.idx - 1 + flatProjects.length) % flatProjects.length }))
   const nextModal = () => setModal(m => ({ ...m, idx: (m.idx + 1) % flatProjects.length }))
 
   return (
     <>
-      <section className="proj-masonry-section" ref={sectionRef}>
+      <section className="proj-logo-section" ref={sectionRef} style={{ background: '#f8fafc' }}>
         <div className="container">
 
           {/* Header */}
-          <div className="proj-masonry__header reveal">
+          <div className="proj-logo__header reveal">
             <span className="section-label">Legacy Roadmap</span>
             <h2 className="section-heading">Fabricating Dreams Since 2008</h2>
             <p className="section-sub" style={{ margin: '0 auto' }}>
@@ -150,39 +147,44 @@ export default function ProjectsGallery() {
             <button
               className={`proj-year-btn${activeYear === ALL ? ' proj-year-btn--active' : ''}`}
               onClick={() => setActiveYear(ALL)}
-            >
-              All Years
-            </button>
+            >All Years</button>
             {allYears.map(year => (
               <button
                 key={year}
                 className={`proj-year-btn${activeYear === year ? ' proj-year-btn--active' : ''}`}
                 onClick={() => setActiveYear(year)}
-              >
-                {year}
-              </button>
+              >{year}</button>
             ))}
           </div>
 
-          {/* Masonry grid */}
-          <div className="proj-masonry">
-            {flatProjects.map((project, i) => (
-              <button
-                key={`${project.year}-${i}`}
-                className="proj-masonry__item"
-                onClick={() => setModal({ idx: i })}
-                aria-label={`View ${project.name}`}
-              >
-                <img src={project.img} alt={project.name} loading="lazy" />
-                <div className="proj-masonry__overlay">
-                  <div className="proj-masonry__overlay-content">
-                    <CategoryBadge category={project.category} />
-                    <h3 className="proj-masonry__name">{project.name}</h3>
-                    <span className="proj-masonry__year">{project.year}</span>
-                  </div>
-                </div>
-              </button>
-            ))}
+          {/* Logo grid */}
+          <div className="proj-logo-grid">
+            {(() => {
+              const seenLogos = new Set()
+              return flatProjects.map((project, i) => {
+                const logoUsed = project.logo && !seenLogos.has(project.logo)
+                if (project.logo) seenLogos.add(project.logo)
+                return (
+                  <button
+                    key={`${project.year}-${i}`}
+                    className="proj-logo-card"
+                    onClick={() => setModal({ idx: i })}
+                    aria-label={`View ${project.name}`}
+                  >
+                    <div className={`proj-logo-card__box${logoUsed ? '' : ' proj-logo-card__box--text'}`}>
+                      {logoUsed
+                        ? <img src={project.logo} alt={project.name} className="proj-logo-card__img" />
+                        : <span className="proj-logo-card__text">{project.name}</span>
+                      }
+                    </div>
+                    <div className="proj-logo-card__info">
+                      <span className="proj-logo-card__name">{project.name}</span>
+                      <span className="proj-logo-card__year">{project.year}</span>
+                    </div>
+                  </button>
+                )
+              })
+            })()}
           </div>
 
         </div>

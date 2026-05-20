@@ -36,6 +36,7 @@ export const brandCategories = [
     category: 'Glass Solutions',
     brands: [
       { name: 'S.G.',      logo: b + 'sg.webp' },
+      { name: 'Glass',     logo: b + 'glass_brand4.png' },
       { name: 'Ozone',     logo: b + 'ozone.png' },
       { name: 'AIS Glass', logo: b + 'ais.png' },
     ],

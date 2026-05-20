@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ChevronRight } from 'lucide-react'
-import heroBg from '../../assets/h1.png'
+import heroBg from '../../assets/page-hero1.jpg'
 
 export default function IndustriesHero() {
   return (
